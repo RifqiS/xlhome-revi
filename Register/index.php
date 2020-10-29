@@ -33,32 +33,54 @@
                 <div class="card-body">
                     <table>
                         <tr>
-                            <td>
+                            <td colspan="2">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" size="200">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            </td>
-                            <td>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <label for="alamat">Alamat Lengkap</label>
+                                <input type="text" class="form-control" id="alamat" aria-describedby="alamatHelp" placeholder="Alamat Lengkap" size="200">
                             </div>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama" aria-describedby="namaHelp" placeholder="Alamat Lengkap" size="200">
+                            </div>
+                            </td>
+                            <td>
+                            <div class="form-group">
+                                <label for="email">E - Mail</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Alamat Lengkap" size="200">
+                            </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
+                        <td>
+                            <div class="form-group">
+                                <label for="noHp">No. Handphone</label>
+                                <input type="text" class="form-control" id="noHp" aria-describedby="noHpHelp" placeholder="Alamat Lengkap" size="200">
+                            </div>
+                            </td>
+                            <td>
+                            <div class="form-group">
+                                <label for="tlp">Telephone Rumah</label>
+                                <input type="text" class="form-control" id="tlp" aria-describedby="tlpHelp" placeholder="Alamat Lengkap" size="200">
+                            </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
+                        <td>
+                            <div class="form-group">
+                                <label for="upKTP">Upload Foto KTP</label>
+                                <input type="file" class="form-control" id="upKTP" aria-describedby="upKTPHelp">
+                            </div>
+                            </td>
+                            <td>
+                            <div class="form-group">
+                                <label for="upSelfie">Upload Foto Selfie Dengan KTP</label>
+                                <input type="file" class="form-control" id="upSelfie" aria-describedby="upSelfieHelp">
+                            </div>
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
