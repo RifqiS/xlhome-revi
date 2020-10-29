@@ -18,14 +18,9 @@
 </head>
 
 <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">XL HOME Bandung</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">Produk</a>
-            <a class="p-2 text-dark" href="#">Kontak</a>
-        </nav>
-        <a class="btn btn-outline-primary" href="#">Registrasi</a>
-    </div>
+    <?php
+        include "nav.php";
+    ?>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Paket Fiber XL</h1>
         <p class="lead">Fiber Internet + TV Entertainment Box</p>
