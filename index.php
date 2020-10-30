@@ -19,7 +19,7 @@
 
 <body>
     <?php
-        include "nav.php";
+    include "nav.php";
     ?>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Paket Fiber XL</h1>
@@ -28,7 +28,7 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
-            <div class="card" style="width: 18rem;">
+            <div class="card shadow" style="width: 18rem;">
                 <div class="card-body">
                     <h3 class="card-title">FAMILY</h3>
                     <h2 class="card-subtitle"><img src="assets/img/family-speed.png" alt="" srcset=""></h2>
@@ -39,7 +39,7 @@
                     <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card shadow" style="width: 18rem;">
                 <div class="card-body">
                     <h3 class="card-title">SUPER USERS</h3>
                     <h2 class="card-subtitle"><img src="assets/img/super-users-speed.png" alt="" srcset=""></h2>
@@ -50,7 +50,7 @@
                     <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card shadow" style="width: 18rem;">
                 <div class="card-body">
                     <h3 class="card-title">ULTIMATE</h3>
                     <h2 class="card-subtitle"><img src="assets/img/ultimate-speed.png" alt="" srcset=""></h2>
