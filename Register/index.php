@@ -32,13 +32,13 @@
 
     <!-- Form Register -->
     <div class="container">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center mx-n1">
             <form class="needs-validation" novalidate>
 
                 <div class="form-row">
                     <div class="col-md mb-3">
                         <label for="alamat">Alamat Lengkap</label>
-                        <textarea class="form-control btn-outline-primary" name="alamat" id="" cols="30" rows="3" placeholder="Alamat Lengkap" required></textarea>
+                        <textarea class="form-control border-primary" name="alamat" id="" cols="30" rows="3" placeholder="Alamat Lengkap" required></textarea>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
@@ -48,14 +48,14 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="nama">Nama Lengkap</label>
-                        <input type="text" class="form-control btn-outline-primary" name="nama" id="nama" placeholder="Nama Lengkap" required>
+                        <input type="text" class="form-control border-primary" name="nama" id="nama" placeholder="Nama Lengkap" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control btn-outline-primary" name="email" id="email" placeholder="alamat@contoh.com" required>
+                        <input type="email" class="form-control border-primary" name="email" id="email" placeholder="alamat@contoh.com" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
@@ -65,14 +65,14 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="no_hp">No. Handphone</label>
-                        <input type="text" class="form-control btn-outline-primary" name="no_hp" id="no_hp" placeholder="08xxx" onkeypress="return isNumberKey(event)" required>
+                        <input type="text" class="form-control border-primary" name="no_hp" id="no_hp" placeholder="08xxx" onkeypress="return isNumberKey(event)" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="no_telp">Telephone Rumah</label>
-                        <input type="text" class="form-control btn-outline-primary" name="no_telp" id="no_telp" placeholder="x2xxx" onkeypress="return isNumberKey(event)" required>
+                        <input type="text" class="form-control border-primary" name="no_telp" id="no_telp" placeholder="x2xxx" onkeypress="return isNumberKey(event)" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
@@ -85,21 +85,21 @@
                         <div class="form-group">
                             <div class="custom-file">
                                 <input type="file" class="form-control custom-file-input" name="foto_ktp" id="foto_ktp" required>
-                                <label class="custom-file-label btn-outline-primary" for="foto_ktp">Piilh Foto</label>
+                                <label class="custom-file-label border-primary" for="foto_ktp">Piilh Foto</label>
+                                <div class="invalid-feedback">
+                                    Tidak boleh kosong!
+                                </div>
                             </div>
-                        </div>
-                        <div class="invalid-feedback">
-                            Tidak boleh kosong!
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Upload Foto Selfie Dengan KTP</label>
                         <div class="custom-file">
                             <input type="file" class="form-control custom-file-input" name="foto_wajah" id="foto_wajah" required>
-                            <label class="custom-file-label btn-outline-primary" for="foto_wajah">Piilh Foto</label>
-                        </div>
-                        <div class="invalid-feedback">
-                            Tidak boleh kosong!
+                            <label class="custom-file-label border-primary" for="foto_wajah">Piilh Foto</label>
+                            <div class="invalid-feedback">
+                                Tidak boleh kosong!
+                            </div>
                         </div>
                     </div>
                 </div>
