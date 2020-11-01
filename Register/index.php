@@ -1,3 +1,11 @@
+<?php
+    $kode    = mysqli_query($db, "select max(id) as KODE from registrasi");
+    $ar      = mysqli_fetch_array($kode);
+    $id_kode = $ar['KODE'];
+    $urut    = substr($id_kode, 4,2);
+    $urut++;
+    $id_baru = date('md').sprintf("%02s", $urut);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +42,7 @@
     <div class="container">
         <div class="row justify-content-md-center mx-n1">
             <form class="needs-validation" novalidate>
-
+                <input type="hidden" name="id" id="id" value="<?= $id_baru?>">
                 <div class="form-row">
                     <div class="col-md mb-3">
                         <label for="alamat">Alamat Lengkap</label>
