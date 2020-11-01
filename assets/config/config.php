@@ -21,13 +21,18 @@ function query($query) {
         
 // Funtion CRUD
        
-function i_spp($i_spp){
+function iRegistrasi($iRegistrasi){
     global $db;
-    $id_spp=$i_spp['id_spp'];
-    $tahun=htmlspecialchars($i_spp['tahun']);
-    $nominal=htmlspecialchars($i_spp['nominal']);
-    $total_nominal = $nominal * 36;
-    $query = "INSERT INTO spp VALUES('$id_spp','$tahun','$nominal','$total_nominal')";
+    $id=$iRegistrasi['id'];
+    $alamat=htmlspecialchars($iRegistrasi['alamat']);
+    $paket=htmlspecialchars($iRegistrasi['paket']);
+    $nama=htmlspecialchars($iRegistrasi['nama']);
+    $email=htmlspecialchars($iRegistrasi['email']);
+    $noHp=htmlspecialchars($iRegistrasi['noHp']);
+    $tlp=htmlspecialchars($iRegistrasi['tlp']);
+    $fotoKtp=htmlspecialchars($iRegistrasi['fotoKtp']);
+    $fotoSelfie=htmlspecialchars($iRegistrasi['fotoSelfie']);
+    $query = "INSERT INTO spp VALUES('$id','$alamat','$paket','$nama','$email','$noHp','$tlp','$fotoKtp','$fotoSelfie','',0)";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
