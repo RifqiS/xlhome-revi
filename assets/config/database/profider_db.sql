@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Okt 2020 pada 07.59
+-- Waktu pembuatan: 01 Nov 2020 pada 05.15
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.7
 
@@ -31,14 +31,20 @@ CREATE TABLE `admin` (
   `id` varchar(10) NOT NULL,
   `user` text NOT NULL,
   `pass` text NOT NULL,
-  `nama` text NOT NULL,
-  `tlp` int(15) NOT NULL,
-  `wa` int(15) NOT NULL,
-  `judul` varchar(100) NOT NULL,
+  `TitleHome` text NOT NULL,
   `logo` varchar(200) NOT NULL,
-  `alamat` text NOT NULL,
   `sos1` text NOT NULL,
-  `sos2` text NOT NULL
+  `sos2` text NOT NULL,
+  `agen` text NOT NULL,
+  `agen1` text NOT NULL,
+  `agen2` text NOT NULL,
+  `tlp` int(15) NOT NULL,
+  `telp1` int(15) NOT NULL,
+  `telp2` int(15) NOT NULL,
+  `wa` int(15) NOT NULL,
+  `wa1` int(15) NOT NULL,
+  `wa2` int(15) NOT NULL,
+  `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -70,11 +76,14 @@ CREATE TABLE `registrasi` (
   `id` varchar(10) NOT NULL,
   `alamat` text NOT NULL,
   `paket` varchar(10) NOT NULL,
-  `noktp` bigint(20) NOT NULL,
   `nama` text NOT NULL,
-  `tlp` int(11) NOT NULL,
   `email` text NOT NULL,
-  `pass` text NOT NULL
+  `noHp` int(15) NOT NULL,
+  `tlp` int(15) NOT NULL,
+  `fotoKtp` text NOT NULL,
+  `fotoSelfie` text NOT NULL,
+  `timeStamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `statusRead` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
