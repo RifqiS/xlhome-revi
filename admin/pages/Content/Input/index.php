@@ -1,3 +1,26 @@
+<?php
+$kode    = mysqli_query($db, "select max(id) as KODE from registrasi");
+$ar      = mysqli_fetch_array($kode);
+$id_kode = $ar['KODE'];
+$urut    = substr($id_kode, 4,2);
+$urut++;
+$id_baru = date('dmy').sprintf("%02s", $urut);
+
+// PROSES TAMBAH
+if (isset($_POST['tambah'])) {		
+	if( iContent($_POST) > 0 ){
+		echo "<script>
+			document.location.href='index.php?page=Content';
+		</script>";
+	}else{
+		echo "<script>
+			alert('Gagal Menambah Data!');
+		</script>";
+		mysqli_error($db);	
+	}
+}
+?>
+
 <div class="container mx-auto text-center">
     <h2>Content</h2>
 </div>
@@ -10,7 +33,7 @@
                     <div class="form-group row">
                         <label for="id_content" class="col-sm-4 col-form-label">Id Content</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="id_content" id="id_content" placeholder="" required>
+                            <input size="200" value="<?= $id_baru;?>" type="text" class="form-control border-primary" name="id_content" id="id_content" placeholder="" required>
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
