@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-webfont.ttf">
     <!-- END CSS -->
-
+    <!-- ICON -->
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- END ICON -->
     <!-- JS -->
     <script src="../assets/jQuery/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
@@ -38,6 +40,10 @@
 
                     case 'Content':
                         include 'pages/content/index.php';
+                        break;
+
+                    case 'AddContent':
+                        include 'pages/content/input/index.php';
                         break;
 
                     case 'Settings':

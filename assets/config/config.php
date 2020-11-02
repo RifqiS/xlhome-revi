@@ -1,109 +1,181 @@
 <?php
-    $server = "localhost";
-    $user = "root";
-    $password = "";
-    $nama_database = "profider_db";
-    $db = mysqli_connect($server, $user, $password, $nama_database);
-    if(!$db){
-        die("Error".mysql_connect_error());
-    }	
-	
-function query($query) {
+$server = "localhost";
+$user = "root";
+$password = "";
+$nama_database = "profider_db";
+$db = mysqli_connect($server, $user, $password, $nama_database);
+if (!$db) {
+    die("Error" . mysqli_connect_error());
+}
+
+function base_url()
+{
+    // return 'http://localhost/xlhome-revi/';
+    return 'http://localhost/2020/projek/xlhome-revi/';
+}
+
+function query($query)
+{
     global $db;
     $result = mysqli_query($db, $query);
     $rows = [];
-    while ( $row = mysqli_fetch_assoc($result) ) {
-        $rows [] = $row;
-        }
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
     return $rows;
- 
 }
-        
+
 // Funtion CRUD
-       
-function iRegistrasi($iRegistrasi){
+
+function upload($foto)
+{
+    // return false;
+    $namafile = $_FILES[$foto]['name'];
+    $ukuranfile = $_FILES[$foto]['size'];
+    $error = $_FILES[$foto]['error'];
+    $tmpname = $_FILES[$foto]['tmp_name'];
+    $lokasi = base_url() . "assets/img/upload/";
+    // var_dump($_POST);
+    // var_dump($_FILES);
+    // var_dump($ukuranfile);
+    // die;
+
+    // cek apakah tidak ada foto yang di upload
+    if ($error === 4) {
+        echo "
+				<script>
+					alert('masukkan foto terlebih dahulu!');
+				</script>
+			";
+        return false;
+    }
+
+    // cek valid gambar
+    $ekstensigambarvalid = ['jpg', 'jpeg', 'png', 'gif'];
+    $ekstensigambar = explode('.', $namafile);
+    $ekstensigambar = strtolower(end($ekstensigambar));
+    if (!in_array($ekstensigambar, $ekstensigambarvalid)) {
+        echo "
+				<script>
+					alert('yang anda masukkan bukan gambar!');
+				</script>
+			";
+        return false;
+    }
+
+
+    // batas ukuran file
+    if ($ukuranfile > 1050000) {
+        echo "
+				<script>
+					alert('ukuran gambar terlalu besar!');
+				</script>
+			";
+        return false;
+    }
+
+    // lolos pengecekan
+    // generate nama baru
+    $namafilebaru = uniqid();
+    $namafilebaru .= '.';
+    $namafilebaru .= $ekstensigambar;
+
+    move_uploaded_file($tmpname, $lokasi . $namafilebaru);
+
+    return $namafilebaru;
+}
+
+function iRegistrasi($iRegistrasi)
+{
     global $db;
-    $id         =$iRegistrasi['id'];
-    $alamat     =htmlspecialchars($iRegistrasi['alamat']);
-    $paket      =htmlspecialchars($iRegistrasi['paket']);
-    $nama       =htmlspecialchars($iRegistrasi['nama']);
-    $email      =htmlspecialchars($iRegistrasi['email']);
-    $noHp       =htmlspecialchars($iRegistrasi['noHp']);
-    $tlp        =htmlspecialchars($iRegistrasi['tlp']);
-    $fotoKtp    =htmlspecialchars($iRegistrasi['fotoKtp']);
-    $fotoSelfie =htmlspecialchars($iRegistrasi['fotoSelfie']);
+    $id         = $iRegistrasi['id'];
+    $alamat     = htmlspecialchars($iRegistrasi['alamat']);
+    $paket      = htmlspecialchars($iRegistrasi['paket']);
+    $nama       = htmlspecialchars($iRegistrasi['nama']);
+    $email      = htmlspecialchars($iRegistrasi['email']);
+    $noHp       = htmlspecialchars($iRegistrasi['noHp']);
+    $tlp        = htmlspecialchars($iRegistrasi['tlp']);
+    $fotoKtp    = htmlspecialchars($iRegistrasi['fotoKtp']);
+    $fotoSelfie = htmlspecialchars($iRegistrasi['fotoSelfie']);
     $query      = "INSERT INTO registrasi VALUES('$id','$alamat','$paket','$nama','$email','$noHp','$tlp','$fotoKtp','$fotoSelfie','',0)";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
 
-function iContent($iContent){
+function iContent($iContent)
+{
     global $db;
-    $id         =$iContent['id'];
-    $judul      =htmlspecialchars($iContent['judul']);
-    $logo       =htmlspecialchars($iContent['logo']);
-    $harga      =htmlspecialchars($iContent['harga']);
-    $subJudul   =htmlspecialchars($iContent['subJudul']);
-    $fitur1     =htmlspecialchars($iContent['fitur1']);
-    $fitur2     =htmlspecialchars($iContent['fitur2']);
-    $fitur3     =htmlspecialchars($iContent['fitur3']);
-    $fitur4     =htmlspecialchars($iContent['fitur4']);
-    $fitur5     =htmlspecialchars($iContent['fitur5']);
-    $fitur6     =htmlspecialchars($iContent['fitur6']);
-    $query      = "INSERT INTO content VALUES('$id','$judul','$logo','$harga','$subJudul','$fitur1','$fitur2','$fitur3','$fitur4','$fitur5','$fitur6',0)";
+    $id_content      = $iContent['id_content'];
+    $judul           = htmlspecialchars($iContent['judul']);
+    $harga           = htmlspecialchars($iContent['harga']);
+    $sub_judul       = htmlspecialchars($iContent['sub_judul']);
+    $fitur_1         = htmlspecialchars($iContent['fitur_1']);
+    $fitur_2         = htmlspecialchars($iContent['fitur_2']);
+    $fitur_3         = htmlspecialchars($iContent['fitur_3']);
+    $fitur_4         = htmlspecialchars($iContent['fitur_4']);
+    $fitur_5         = htmlspecialchars($iContent['fitur_5']);
+    $fitur_6         = htmlspecialchars($iContent['fitur_6']);
+    $logo_content    = $_FILES['logo_content']['name'];
+    // $logo_content = upload($_FILES['logo_content']);
+    // if (!$logo_content) {
+    //     return false;
+    // }
+    $query           = "INSERT INTO content VALUES('$id_content','$judul','$logo_content','$harga','$sub_judul','$fitur_1','$fitur_2','$fitur_3','$fitur_4','$fitur_5','$fitur_6')";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
 
-function eAdmin($eAdmin){
+function hContent($iContent)
+{
     global $db;
-    $id         =$eAdmin['id'];
-    $user       =htmlspecialchars($eAdmin['user']);
-    $pass       =htmlspecialchars($eAdmin['pass']);
-    $TitleHome  =htmlspecialchars($eAdmin['TitleHome']);
-    $logo       =htmlspecialchars($eAdmin['logo']);
-    $sos1       =htmlspecialchars($eAdmin['sos1']);
-    $sos2       =htmlspecialchars($eAdmin['sos2']);
-    $agen       =htmlspecialchars($eAdmin['agen']);
-    $agen1      =htmlspecialchars($eAdmin['agen1']);
-    $agen2      =htmlspecialchars($eAdmin['agen2']);
-    $tlp        =htmlspecialchars($eAdmin['tlp']);
-    $tlp1       =htmlspecialchars($eAdmin['tlp1']);
-    $tlp2       =htmlspecialchars($eAdmin['tlp2']);
-    $wa         =htmlspecialchars($eAdmin['wa']);
-    $wa1        =htmlspecialchars($eAdmin['wa1']);
-    $wa2        =htmlspecialchars($eAdmin['wa2']);
-    $alamat     =htmlspecialchars($eAdmin['alamat']);
-
-    $query      ="UPDATE 'admin' SET user='$user',pass='$pass',TitleHome='$TitleHome',logo='$logo',sos1='$sos1',sos2='$sos2',agen='$agen',agen1='$agen1',agen2='$agen2',tlp='$tlp',tlp1='$tlp1',tlp2='$tlp2',wa='$wa',wa1='$wa1',wa2='$wa2',alamat='$alamat' WHERE id='Un!X1d@4pp'";
+    $id      = $iContent['hapus'];
+    $query = "DELETE FROM content WHERE id = '$id'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
 
-function eContent($eContent){
+function eAdmin($eAdmin)
+{
     global $db;
-    $id         =$eContent['id'];
-    $judul      =htmlspecialchars($eContent['judul']);
-    $logo       =htmlspecialchars($eContent['logo']);
-    $harga      =htmlspecialchars($eContent['harga']);
-    $subJudul   =htmlspecialchars($eContent['subJudul']);
-    $fitur1     =htmlspecialchars($eContent['fitur1']);
-    $fitur2     =htmlspecialchars($eContent['fitur2']);
-    $fitur3     =htmlspecialchars($eContent['fitur3']);
-    $fitur4     =htmlspecialchars($eContent['fitur4']);
-    $fitur5     =htmlspecialchars($eContent['fitur5']);
-    $fitur6     =htmlspecialchars($eContent['fitur6']);
+    $id         = $eAdmin['id'];
+    $user       = htmlspecialchars($eAdmin['user']);
+    $pass       = htmlspecialchars($eAdmin['pass']);
+    $TitleHome  = htmlspecialchars($eAdmin['TitleHome']);
+    $logo       = htmlspecialchars($eAdmin['logo']);
+    $sos1       = htmlspecialchars($eAdmin['sos1']);
+    $sos2       = htmlspecialchars($eAdmin['sos2']);
+    $agen       = htmlspecialchars($eAdmin['agen']);
+    $agen1      = htmlspecialchars($eAdmin['agen1']);
+    $agen2      = htmlspecialchars($eAdmin['agen2']);
+    $tlp        = htmlspecialchars($eAdmin['tlp']);
+    $tlp1       = htmlspecialchars($eAdmin['tlp1']);
+    $tlp2       = htmlspecialchars($eAdmin['tlp2']);
+    $wa         = htmlspecialchars($eAdmin['wa']);
+    $wa1        = htmlspecialchars($eAdmin['wa1']);
+    $wa2        = htmlspecialchars($eAdmin['wa2']);
+    $alamat     = htmlspecialchars($eAdmin['alamat']);
 
-    $query      ="UPDATE content SET judul='$judul',logo='$logo',harga='$harga',subJudul='$subJudul',fitur1='$fitur1',fitur2='$fitur2',fitur3='$fitur3',fitur4='$fitur4',fitur5='$fitur5',fitur6='$fitur6' WHERE id='$id'";
+    $query      = "UPDATE 'admin' SET user='$user',pass='$pass',TitleHome='$TitleHome',logo='$logo',sos1='$sos1',sos2='$sos2',agen='$agen',agen1='$agen1',agen2='$agen2',tlp='$tlp',tlp1='$tlp1',tlp2='$tlp2',wa='$wa',wa1='$wa1',wa2='$wa2',alamat='$alamat' WHERE id='Un!X1d@4pp'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
 
-function hContent($hContent){
+function eContent($eContent)
+{
     global $db;
-    $id=$hContent['id'];
-    $query="DELETE FROM content WHERE id = '$id'";
+    $id         = $eContent['id'];
+    $judul      = htmlspecialchars($eContent['judul']);
+    $logo       = htmlspecialchars($eContent['logo']);
+    $harga      = htmlspecialchars($eContent['harga']);
+    $subJudul   = htmlspecialchars($eContent['subJudul']);
+    $fitur1     = htmlspecialchars($eContent['fitur1']);
+    $fitur2     = htmlspecialchars($eContent['fitur2']);
+    $fitur3     = htmlspecialchars($eContent['fitur3']);
+    $fitur4     = htmlspecialchars($eContent['fitur4']);
+    $fitur5     = htmlspecialchars($eContent['fitur5']);
+    $fitur6     = htmlspecialchars($eContent['fitur6']);
+
+    $query      = "UPDATE content SET judul='$judul',logo='$logo',harga='$harga',subJudul='$subJudul',fitur1='$fitur1',fitur2='$fitur2',fitur3='$fitur3',fitur4='$fitur4',fitur5='$fitur5',fitur6='$fitur6' WHERE id='$id'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
-?>

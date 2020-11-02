@@ -1,6 +1,21 @@
 <?php
 //  include "../../assets/config/config.php"
-    $data = query("SELECT * FROM content");
+$data = query("SELECT * FROM content");
+
+// PROSES HAPUS
+if (isset($_POST['hapus'])) {
+	if( hContent($_POST) > 0 ){
+		echo "<script>
+			document.location.href='index.php?page=Content';
+		</script>";
+	}else{
+		echo "<script>
+            alert('Gagal Menghapus!');
+            // document.location.href='?page=Content';
+		</script>";
+		mysqli_error($db);	
+	}
+}
 ?>
 <div class="container mx-auto text-center">
     <h2>Content</h2>
@@ -9,38 +24,48 @@
     <div class="row justify-content-md-center mx-n1">
         <div class="row">
             <div class="col">
-                <table class="table table-responesive" border="1">
+                <a class="btn btn-primary text-decoration-none" href="?page=AddContent"><i class="fa fa-plus"></i> Tambah Data</a>
+                <table class="table table-hover">
                     <thead>
-                        <tr>Judul</tr>
-                        <tr>Logo</tr>
-                        <tr>Harga</tr>
-                        <tr>Sub Judul</tr>
-                        <tr>Fitur 1</tr>
-                        <tr>Fitur 2</tr>
-                        <tr>Fitur 3</tr>
-                        <tr>Fitur 4</tr>
-                        <tr>Fitur 5</tr>
-                        <tr>Fitur 6</tr>
-                        <tr>Action</tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Judul</th>
+                            <th>Logo</th>
+                            <th>Harga</th>
+                            <th>Sub Judul</th>
+                            <th>Fitur 1</th>
+                            <th>Fitur 2</th>
+                            <th>Fitur 3</th>
+                            <th>Fitur 4</th>
+                            <th>Fitur 5</th>
+                            <th>Fitur 6</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
-                       <?php foreach ( $data as $rows ) : ?>
-
-                        <td><?= $rows['judul']; ?></td>
-                        <td><?= $rows['logo']; ?></td>
-                        <td><?= $rows['harga']; ?></td>
-                        <td><?= $rows['sub_judul']; ?></td>
-                        <td><?= $rows['cont_1']; ?></td>
-                        <td><?= $rows['cont_2']; ?></td>
-                        <td><?= $rows['cont_3']; ?></td>
-                        <td><?= $rows['cont_4']; ?></td>
-                        <td><?= $rows['cont_5']; ?></td>
-                        <td><?= $rows['cont_6']; ?></td>
-                        <td>
-                            <button class="btn btn-warning" name="" id="">Edit</button>
-                            <button class="btn btn-danger" name="" id="">Delete</button>
-                        </td>
-                        
+                        <?php
+                        $no = 1;
+                        foreach ($data as $rows) :
+                        ?>
+                            <tr>
+                                <td class="align-middle"><?= $no++; ?></td>
+                                <td class="align-middle"><?= $rows['judul']; ?></td>
+                                <td class="align-middle"><?= $rows['logo']; ?></td>
+                                <td class="align-middle"><?= $rows['harga']; ?></td>
+                                <td class="align-middle"><?= $rows['sub_judul']; ?></td>
+                                <td class="align-middle"><?= $rows['cont_1']; ?></td>
+                                <td class="align-middle"><?= $rows['cont_2']; ?></td>
+                                <td class="align-middle"><?= $rows['cont_3']; ?></td>
+                                <td class="align-middle"><?= $rows['cont_4']; ?></td>
+                                <td class="align-middle"><?= $rows['cont_5']; ?></td>
+                                <td class="align-middle"><?= $rows['cont_6']; ?></td>
+                                <td class="align-middle">
+                                    <form action="" method="POST">
+                                        <button class="btn btn-warning" name="" id=""><i class="fa fa-pencil-square-o"></i></button>
+                                        <button class="btn btn-danger" name="hapus" id="hapus" value="<?= $rows['id']; ?>"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

@@ -1,5 +1,5 @@
 <?php
-$kode    = mysqli_query($db, "select max(id) as KODE from registrasi");
+$kode    = mysqli_query($db, "select max(id) as KODE from content");
 $ar      = mysqli_fetch_array($kode);
 $id_kode = $ar['KODE'];
 $urut    = substr($id_kode, 4,2);
@@ -7,14 +7,15 @@ $urut++;
 $id_baru = date('dmy').sprintf("%02s", $urut);
 
 // PROSES TAMBAH
-if (isset($_POST['tambah'])) {		
+if (isset($_POST['tambah'])) {
 	if( iContent($_POST) > 0 ){
 		echo "<script>
 			document.location.href='index.php?page=Content';
 		</script>";
 	}else{
 		echo "<script>
-			alert('Gagal Menambah Data!');
+            alert('Gagal Menambah Data!');
+            // document.location.href='?page=AddContent';
 		</script>";
 		mysqli_error($db);	
 	}
@@ -26,14 +27,14 @@ if (isset($_POST['tambah'])) {
 </div>
 <div class="container">
     <div class="row justify-content-md-center mx-n1">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
             <div class="row">
                 <div class="col">
                     <h4>Data Aplikasi</h4>
                     <div class="form-group row">
                         <label for="id_content" class="col-sm-4 col-form-label">Id Content</label>
                         <div class="col-md">
-                            <input size="200" value="<?= $id_baru;?>" type="text" class="form-control border-primary" name="id_content" id="id_content" placeholder="" required>
+                            <input size="200" value="<?= $id_baru;?>" type="text" class="form-control border-primary" name="id_content" id="id_content" placeholder="" readonly required>
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -54,7 +55,7 @@ if (isset($_POST['tambah'])) {
                             <div class="form-group">
                                 <div class="custom-file">
                                     <input size="200" type="file" class="form-control custom-file-input" name="logo_content" id="logo_content" required>
-                                    <label class="custom-file-label border-primary" for="foto_ktp">Piilh Foto</label>
+                                    <label class="custom-file-label border-primary" for="logo_content">Piilh Foto</label>
                                     <div class="invalid-feedback">
                                         Tidak boleh kosong!
                                     </div>
@@ -141,7 +142,7 @@ if (isset($_POST['tambah'])) {
                         </div>
                     </div>
                     <div class="form-group text-right">
-                        <button class="btn btn-outline-primary" name="" type="submit">Simpan</button>
+                        <button class="btn btn-outline-primary" name="tambah" type="submit">Simpan</button>
                     </div>
                 </div>
             </div>
