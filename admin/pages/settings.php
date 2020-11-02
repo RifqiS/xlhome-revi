@@ -1,8 +1,6 @@
 <?php
 //  include "../../assets/config/config.php"
-    $data = query("SELECT * FROM `admin` WHERE id = 'Un!X1d@4pp'");
-    
-    echo $data['id'];
+    $data = query("SELECT * FROM `admin` WHERE id = 'Un!X1d@4pp'")[0];
 ?>
 <div class="container mx-auto text-center">
     <h2>Setting</h2>
