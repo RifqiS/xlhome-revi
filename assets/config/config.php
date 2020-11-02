@@ -5,7 +5,7 @@
     $nama_database = "profider_db";
     $db = mysqli_connect($server, $user, $password, $nama_database);
     if(!$db){
-        die("Error".mysql_conne`ct_error());
+        die("Error".mysql_connect_error());
     }	
 	
 function query($query) {
