@@ -1,10 +1,11 @@
 <?php
+    require "../assets/config/config.php";
     $kode    = mysqli_query($db, "select max(id) as KODE from registrasi");
     $ar      = mysqli_fetch_array($kode);
     $id_kode = $ar['KODE'];
     $urut    = substr($id_kode, 4,2);
     $urut++;
-    $id_baru = date('md').sprintf("%02s", $urut);
+    $id_baru = date('dmy').sprintf("%02s", $urut);
 ?>
 <!DOCTYPE html>
 <html lang="en">
