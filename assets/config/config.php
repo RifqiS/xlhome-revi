@@ -30,11 +30,11 @@ function query($query)
 function upload($foto)
 {
     // return false;
-    $namafile = $_FILES[$foto]['name'];
+    $namafile   = $_FILES[$foto]['name'];
     $ukuranfile = $_FILES[$foto]['size'];
-    $error = $_FILES[$foto]['error'];
-    $tmpname = $_FILES[$foto]['tmp_name'];
-    $lokasi = base_url() . "assets/img/upload/";
+    $error      = $_FILES[$foto]['error'];
+    $tmpname    = $_FILES[$foto]['tmp_name'];
+    $lokasi     = "../assets/img/upload/";
     // var_dump($_POST);
     // var_dump($_FILES);
     // var_dump($ukuranfile);
@@ -80,7 +80,16 @@ function upload($foto)
     $namafilebaru .= '.';
     $namafilebaru .= $ekstensigambar;
 
-    move_uploaded_file($tmpname, $lokasi . $namafilebaru);
+    if (move_uploaded_file($tmpname, $lokasi . $namafilebaru)) {
+        // echo "The file ". htmlspecialchars(basename($namafilebaru). " has been uploaded.";
+      } else {
+        echo "
+				<script>
+					alert('Upload gambar gagal!');
+				</script>
+			";
+        return false;
+      }
 
     return $namafilebaru;
 }
@@ -105,30 +114,38 @@ function iRegistrasi($iRegistrasi)
 function iContent($iContent)
 {
     global $db;
-    $id_content      = $iContent['id_content'];
-    $judul           = htmlspecialchars($iContent['judul']);
-    $harga           = htmlspecialchars($iContent['harga']);
-    $sub_judul       = htmlspecialchars($iContent['sub_judul']);
-    $fitur_1         = htmlspecialchars($iContent['fitur_1']);
-    $fitur_2         = htmlspecialchars($iContent['fitur_2']);
-    $fitur_3         = htmlspecialchars($iContent['fitur_3']);
-    $fitur_4         = htmlspecialchars($iContent['fitur_4']);
-    $fitur_5         = htmlspecialchars($iContent['fitur_5']);
-    $fitur_6         = htmlspecialchars($iContent['fitur_6']);
-    $logo_content    = $_FILES['logo_content']['name'];
-    // $logo_content = upload($_FILES['logo_content']);
-    // if (!$logo_content) {
-    //     return false;
-    // }
+    $id_content        = $iContent['id_content'];
+    $judul             = htmlspecialchars($iContent['judul']);
+    $harga             = htmlspecialchars($iContent['harga']);
+    $sub_judul         = htmlspecialchars($iContent['sub_judul']);
+    $fitur_1           = htmlspecialchars($iContent['fitur_1']);
+    $fitur_2           = htmlspecialchars($iContent['fitur_2']);
+    $fitur_3           = htmlspecialchars($iContent['fitur_3']);
+    $fitur_4           = htmlspecialchars($iContent['fitur_4']);
+    $fitur_5           = htmlspecialchars($iContent['fitur_5']);
+    $fitur_6           = htmlspecialchars($iContent['fitur_6']);
+    $name_logo_content = htmlspecialchars($iContent['name_logo_content']);
+    // $logo_content    = $_FILES['logo_content']['name'];
+    $logo_content = upload($name_logo_content);
+    if (!$logo_content) {
+        return false;
+    }
     $query           = "INSERT INTO content VALUES('$id_content','$judul','$logo_content','$harga','$sub_judul','$fitur_1','$fitur_2','$fitur_3','$fitur_4','$fitur_5','$fitur_6')";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
 
-function hContent($iContent)
+function hContent($hContent)
 {
     global $db;
-    $id      = $iContent['hapus'];
+
+    $id      = $hContent['hapus'];
+
+    $file_dir = "../assets/img/upload/";
+    $cari = query("SELECT * FROM content WHERE id = '$id'");
+    $file = $cari[0]['logo'];
+    unlink($file_dir . $file);
+
     $query = "DELETE FROM content WHERE id = '$id'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);

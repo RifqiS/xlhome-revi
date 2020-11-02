@@ -2,12 +2,14 @@
 $kode    = mysqli_query($db, "select max(id) as KODE from content");
 $ar      = mysqli_fetch_array($kode);
 $id_kode = $ar['KODE'];
-$urut    = substr($id_kode, 4,2);
+$urut    = substr($id_kode, 6,2);
 $urut++;
 $id_baru = date('dmy').sprintf("%02s", $urut);
 
 // PROSES TAMBAH
 if (isset($_POST['tambah'])) {
+    // var_dump($_FILES['logo_content']);
+    // die;
 	if( iContent($_POST) > 0 ){
 		echo "<script>
 			document.location.href='index.php?page=Content';
@@ -15,7 +17,7 @@ if (isset($_POST['tambah'])) {
 	}else{
 		echo "<script>
             alert('Gagal Menambah Data!');
-            // document.location.href='?page=AddContent';
+            document.location.href='?page=AddContent';
 		</script>";
 		mysqli_error($db);	
 	}
@@ -55,6 +57,7 @@ if (isset($_POST['tambah'])) {
                             <div class="form-group">
                                 <div class="custom-file">
                                     <input size="200" type="file" class="form-control custom-file-input" name="logo_content" id="logo_content" required>
+                                    <input type="hidden" name="name_logo_content" id="name_logo_content" value="logo_content">
                                     <label class="custom-file-label border-primary" for="logo_content">Piilh Foto</label>
                                     <div class="invalid-feedback">
                                         Tidak boleh kosong!

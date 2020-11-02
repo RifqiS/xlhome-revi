@@ -50,7 +50,7 @@ if (isset($_POST['hapus'])) {
                             <tr>
                                 <td class="align-middle"><?= $no++; ?></td>
                                 <td class="align-middle"><?= $rows['judul']; ?></td>
-                                <td class="align-middle"><?= $rows['logo']; ?></td>
+                                <td class="align-middle"><img src="<?= base_url(); ?>assets/img/upload/<?= $rows['logo']; ?>" alt="" width="100" height="100"></td>
                                 <td class="align-middle"><?= $rows['harga']; ?></td>
                                 <td class="align-middle"><?= $rows['sub_judul']; ?></td>
                                 <td class="align-middle"><?= $rows['cont_1']; ?></td>
