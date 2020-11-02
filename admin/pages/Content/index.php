@@ -1,128 +1,45 @@
+<?php
+//  include "../../assets/config/config.php"
+    $data = query("SELECT * FROM content WHERE id = 'Un!X1d@4pp'");
+?>
 <div class="container mx-auto text-center">
     <h2>Content</h2>
 </div>
 <div class="container">
     <div class="row justify-content-md-center mx-n1">
-        <form class="needs-validation" novalidate>
-            <div class="row">
-                <div class="col">
-                    <h4>Data Aplikasi</h4>
-                    <div class="form-group row">
-                        <label for="id_content" class="col-sm-4 col-form-label">Id Content</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="id_content" id="id_content" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="judul" class="col-sm-4 col-form-label">Judul</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="judul" id="judul" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="logo_content" class="col-sm-4 col-form-label">Logo</label>
-                        <div class="col-md">
-                            <div class="form-group">
-                                <div class="custom-file">
-                                    <input size="200" type="file" class="form-control custom-file-input" name="logo_content" id="logo_content" required>
-                                    <label class="custom-file-label border-primary" for="foto_ktp">Piilh Foto</label>
-                                    <div class="invalid-feedback">
-                                        Tidak boleh kosong!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="harga" class="col-sm-4 col-form-label">Harga</label>
-                        <div class="col-md">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">Rp.</div>
-                                </div>
-                                <input size="200" type="text" class="form-control border-primary" name="harga" id="harga" placeholder="" onkeypress="return isNumberKey(event)" required>
-                                <div class="invalid-feedback">
-                                    Tidak boleh kosong!
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="sub_judul" class="col-sm-4 col-form-label">Sub Judul</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="sub_judul" id="sub_judul" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <h4>Fitur</h4>
-                    <div class="form-group row">
-                        <label for="fitur_1" class="col-sm-4 col-form-label">Fitur 1</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_1" id="fitur_1" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="fitur_2" class="col-sm-4 col-form-label">Fitur 2</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_2" id="fitur_2" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="fitur_3" class="col-sm-4 col-form-label">Fitur 3</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_3" id="fitur_3" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="fitur_4" class="col-sm-4 col-form-label">Fitur 4</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_4" id="fitur_4" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="fitur_5" class="col-sm-4 col-form-label">Fitur 5</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_5" id="fitur_5" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="fitur_6" class="col-sm-4 col-form-label">Fitur 6</label>
-                        <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_6" id="fitur_6" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group text-right">
-                        <button class="btn btn-outline-primary" name="" type="submit">Simpan</button>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-responesive">
+                    <thead>
+                        <tr>Judul</tr>
+                        <tr>Logo</tr>
+                        <tr>Harga</tr>
+                        <tr>Sub Judul</tr>
+                        <tr>Fitur 1</tr>
+                        <tr>Fitur 2</tr>
+                        <tr>Fitur 3</tr>
+                        <tr>Fitur 4</tr>
+                        <tr>Fitur 5</tr>
+                        <tr>Fitur 6</tr>
+                    </thead>
+                    <tbody>
+                       <?php foreach ( $data as $rows ) : ?>
 
-        </form>
+                        <td><?= $rows['judul']; ?></td>
+                        <td><?= $rows['logo']; ?></td>
+                        <td><?= $rows['harga']; ?></td>
+                        <td><?= $rows['sub_judul']; ?></td>
+                        <td><?= $rows['cont_1']; ?></td>
+                        <td><?= $rows['cont_2']; ?></td>
+                        <td><?= $rows['cont_3']; ?></td>
+                        <td><?= $rows['cont_4']; ?></td>
+                        <td><?= $rows['cont_5']; ?></td>
+                        <td><?= $rows['cont_6']; ?></td>
+                        
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
