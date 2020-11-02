@@ -1,3 +1,18 @@
+<?php
+// PROSES edit
+if (isset($_POST['tambah'])) {		
+	if( eContent($_POST) > 0 ){
+		echo "<script>
+			document.location.href='index.php?page=Content';
+		</script>";
+	}else{
+		echo "<script>
+			alert('Gagal Menambah Data!');
+		</script>";
+		mysqli_error($db);	
+	}
+}
+?>
 <div class="container mx-auto text-center">
     <h2>Content</h2>
 </div>

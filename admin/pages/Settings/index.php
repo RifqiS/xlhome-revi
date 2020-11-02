@@ -1,6 +1,19 @@
 <?php
 //  include "../../assets/config/config.php"
     $data = query("SELECT * FROM `admin` WHERE id = 'Un!X1d@4pp'")[0];
+// PROSES TAMBAH
+    if (isset($_POST['tambah'])) {		
+        if( eAdmin($_POST) > 0 ){
+            echo "<script>
+                document.location.href='index.php?page=Settings';
+            </script>";
+        }else{
+            echo "<script>
+                alert('Gagal Menambah Data!');
+            </script>";
+            mysqli_error($db);	
+        }
+    }
 ?>
 <div class="container mx-auto text-center">
     <h2>Setting</h2>
