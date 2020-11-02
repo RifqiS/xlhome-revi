@@ -35,8 +35,8 @@
     include "../nav.php";
     ?>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Paket Fiber XL</h1>
-        <p class="lead">Fiber Internet + TV Entertainment Box</p>
+        <h1 class="display-4 text-primary">Formulir Registrasi</h1>
+        <p class="lead">Silahkan isi formulir di bawah ini dengan lengkap</p>
     </div>
 
     <!-- Form Register -->
