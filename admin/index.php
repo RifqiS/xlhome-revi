@@ -37,11 +37,11 @@
                 switch ($page) {
 
                     case 'Content':
-                        include 'pages/content.php';
+                        include 'pages/content/index.php';
                         break;
 
                     case 'Settings':
-                        include 'pages/settings.php';
+                        include 'pages/settings/index.php';
                         break;
 
                     case 'Logout':
