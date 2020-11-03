@@ -57,7 +57,6 @@ if (isset($_POST['tambah'])) {
                             <div class="form-group">
                                 <div class="custom-file">
                                     <input size="200" type="file" class="form-control custom-file-input" name="logo_content" id="logo_content" required>
-                                    <input type="hidden" name="name_logo_content" id="name_logo_content" value="logo_content">
                                     <label class="custom-file-label border-primary" for="logo_content">Piilh Foto</label>
                                     <div class="invalid-feedback">
                                         Tidak boleh kosong!

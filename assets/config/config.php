@@ -124,9 +124,8 @@ function iContent($iContent)
     $fitur_4           = htmlspecialchars($iContent['fitur_4']);
     $fitur_5           = htmlspecialchars($iContent['fitur_5']);
     $fitur_6           = htmlspecialchars($iContent['fitur_6']);
-    $name_logo_content = htmlspecialchars($iContent['name_logo_content']);
     // $logo_content    = $_FILES['logo_content']['name'];
-    $logo_content = upload($name_logo_content);
+    $logo_content = upload("logo_content");
     if (!$logo_content) {
         return false;
     }
