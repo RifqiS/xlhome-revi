@@ -59,7 +59,7 @@ if (isset($_POST['simpan'])) {
                     <div class="form-group row">
                         <label for="" class="col-sm-4 col-form-label">Logo</label>
                         <img src="<?= base_url(); ?>assets/img/upload/<?= $data["logo"];?>" alt="" width="100" height="100">
-                        <input type="hidden" name="logo_lama" id="logo_lama" value="<?= $data["logo"];?>">
+                        <input type="text" name="logo_lama" id="logo_lama" value="<?= $data["logo"];?>">
                         <div class="col-md">
                             <div class="form-group">
                                 <div class="custom-file">

@@ -129,7 +129,7 @@ function iContent($iContent)
     if (!$logo_content) {
         return false;
     }
-    $query           = "INSERT INTO content VALUES('$id_content','$judul','$logo_content','$harga','$sub_judul','$fitur_1','$fitur_2','$fitur_3','$fitur_4','$fitur_5','$fitur_6')";
+    $query = "INSERT INTO content VALUES('$id_content','$judul','$logo_content','$harga','$sub_judul','$fitur_1','$fitur_2','$fitur_3','$fitur_4','$fitur_5','$fitur_6')";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
@@ -148,18 +148,20 @@ function eContent($eContent)
     $fitur4     = htmlspecialchars($eContent['fitur_4']);
     $fitur5     = htmlspecialchars($eContent['fitur_5']);
     $fitur6     = htmlspecialchars($eContent['fitur_6']);
-
     // cek upload gambar
     if ($_FILES["logo_content"]["error"] === 4) {
         $logo_baru = $logo_lama;
     } else {
+        $file_dir = "../assets/img/upload/";
+        unlink($file_dir . $logo_lama);
+
         $logo_baru = upload("logo_content");
         if (!$logo_baru) {
             return false;
         }
     }
 
-    $query      = "UPDATE content SET judul='$judul',logo='$logo_baru',harga='$harga',sub_Judul='$sub_Judul',cont_1='$fitur1',cont_2='$fitur2',cont_3='$fitur3',cont_4='$fitur4',cont_5='$fitur5',cont_6='$fitur6' WHERE id='$id_content'";
+    $query = "UPDATE content SET judul = '$judul',logo = '$logo_baru',harga = '$harga',sub_Judul = '$sub_Judul',cont_1 = '$fitur1',cont_2 = '$fitur2',cont_3 = '$fitur3',cont_4 = '$fitur4',cont_5 = '$fitur5',cont_6 = '$fitur6' WHERE id = '$id_content'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
