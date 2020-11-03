@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $server = "localhost";
 $user = "root";
 $password = "";
@@ -24,6 +26,12 @@ function query($query)
     }
     return $rows;
 }
+
+// APP
+$c_d = query("SELECT * FROM admin WHERE id = 'Un!X1d@4pp'")[0];
+$_SESSION['title_page'] = $c_d['TitleHome'];
+$_SESSION['logo'] = $c_d['logo'];
+
 
 // Funtion CRUD
 
@@ -99,14 +107,31 @@ function iRegistrasi($iRegistrasi)
     global $db;
     $id         = $iRegistrasi['id'];
     $alamat     = htmlspecialchars($iRegistrasi['alamat']);
+    $kecamatan     = htmlspecialchars($iRegistrasi['kecamatan']);
+    $kota     = htmlspecialchars($iRegistrasi['kota']);
+    $desa     = htmlspecialchars($iRegistrasi['desa']);
+    $kodepos     = htmlspecialchars($iRegistrasi['kodepos']);
     $paket      = htmlspecialchars($iRegistrasi['paket']);
     $nama       = htmlspecialchars($iRegistrasi['nama']);
     $email      = htmlspecialchars($iRegistrasi['email']);
     $noHp       = htmlspecialchars($iRegistrasi['noHp']);
     $tlp        = htmlspecialchars($iRegistrasi['tlp']);
-    $fotoKtp    = htmlspecialchars($iRegistrasi['fotoKtp']);
-    $fotoSelfie = htmlspecialchars($iRegistrasi['fotoSelfie']);
-    $query      = "INSERT INTO registrasi VALUES('$id','$alamat','$paket','$nama','$email','$noHp','$tlp','$fotoKtp','$fotoSelfie','',0)";
+    // $fotoKtp    = htmlspecialchars($iRegistrasi['fotoKtp']);
+    // $fotoSelfie = htmlspecialchars($iRegistrasi['fotoSelfie']);
+    $timeStamp = "";
+    $statusRead = 0;
+
+    // upload("nama_input","Nama_input(dalam folder img)");
+    $fotoKtp = upload("fotoKtp", "register");
+    if (!$fotoKtp) {
+        return false;
+    }
+    $fotoSelfie = upload("fotoSelfie", "register");
+    if (!$fotoSelfie) {
+        return false;
+    }
+
+    $query      = "INSERT INTO registrasi VALUES('$id','$alamat','$kecamatan','$kota','$desa','$kodepos','$paket','$nama','$email','$noHp','$tlp','$fotoKtp','$fotoSelfie','$timeStamp','$statusRead')";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }

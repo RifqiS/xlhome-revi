@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if (isset($_SESSION['CREATE_URI']) && $_SESSION['CREATE_URI'] !== $_SERVER['REQUEST_URI']) {
         unset($_SESSION['CREATE_URI']);
         unset($_SESSION['idctn']);

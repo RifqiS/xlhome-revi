@@ -1,11 +1,28 @@
 <?php
-    require "../assets/config/config.php";
-    $kode    = mysqli_query($db, "select max(id) as KODE from registrasi");
-    $ar      = mysqli_fetch_array($kode);
-    $id_kode = $ar['KODE'];
-    $urut    = substr($id_kode, 4,2);
-    $urut++;
-    $id_baru = date('dmy').sprintf("%02s", $urut);
+require "../assets/config/config.php";
+$kode    = mysqli_query($db, "select max(id) as KODE from registrasi");
+$ar      = mysqli_fetch_array($kode);
+$id_kode = $ar['KODE'];
+$urut    = substr($id_kode, 6, 2);
+$urut++;
+$id_baru = date('dmy') . sprintf("%02s", $urut);
+
+// PROSES TAMBAH
+if (isset($_POST['kirim'])) {
+    // var_dump($_FILES['logo_content']);
+    // die;
+	if( iRegistrasi($_POST) > 0 ){
+		echo "<script>
+			document.location.href='';
+		</script>";
+	}else{
+		echo "<script>
+            alert('Gagal Menambah Data!');
+            document.location.href='';
+		</script>";
+		mysqli_error($db);	
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,12 +59,58 @@
     <!-- Form Register -->
     <div class="container">
         <div class="row justify-content-md-center mx-n1">
-            <form class="needs-validation" novalidate>
-                <input type="hidden" name="id" id="id" value="<?= $id_baru?>">
+            <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
+                <input type="hidden" name="id" id="id" value="<?= $id_baru ?>">
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="paket">Paket</label>
+                        <input type="text" class="form-control border-primary" name="paket" id="paket" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="kecamatan">Kecamatan</label>
+                        <input type="text" class="form-control border-primary" name="kecamatan" id="kecamatan" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="kota">Kota</label>
+                        <input type="text" class="form-control border-primary" name="kota" id="kota" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="desa">Desa</label>
+                        <input type="text" class="form-control border-primary" name="desa" id="desa" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="kodepos">Kode Pos</label>
+                        <input type="text" class="form-control border-primary" name="kodepos" id="kodepos" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-row">
                     <div class="col-md mb-3">
                         <label for="alamat">Alamat Lengkap</label>
-                        <textarea class="form-control border-primary" name="alamat" id="" cols="30" rows="3" placeholder="Alamat Lengkap" required></textarea>
+                        <!-- <textarea class="form-control border-primary" name="alamat" id="alamat" cols="30" rows="1" placeholder="Alamat Lengkap" required></textarea> -->
+                        <input class="form-control border-primary" type="text" name="alamat" id="alamat" placeholder="Alamat Lengkap" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
@@ -73,15 +136,15 @@
 
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="no_hp">No. Handphone</label>
-                        <input type="text" class="form-control border-primary" name="no_hp" id="no_hp" placeholder="08xxx" onkeypress="return isNumberKey(event)" required>
+                        <label for="noHp">No. Handphone</label>
+                        <input type="text" class="form-control border-primary" name="noHp" id="noHp" placeholder="08xxx" onkeypress="return isNumberKey(event)" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="no_telp">Telephone Rumah</label>
-                        <input type="text" class="form-control border-primary" name="no_telp" id="no_telp" placeholder="x2xxx" onkeypress="return isNumberKey(event)" required>
+                        <label for="tlp">Telephone Rumah</label>
+                        <input type="text" class="form-control border-primary" name="tlp" id="tlp" placeholder="x2xxx" onkeypress="return isNumberKey(event)" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
@@ -93,8 +156,8 @@
                         <label for="">Upload Foto KTP</label>
                         <div class="form-group">
                             <div class="custom-file">
-                                <input type="file" class="form-control custom-file-input" name="foto_ktp" id="foto_ktp" required>
-                                <label class="custom-file-label border-primary" for="foto_ktp">Piilh Foto</label>
+                                <input type="file" class="form-control custom-file-input" name="fotoKtp" id="fotoKtp" required>
+                                <label class="custom-file-label border-primary" for="fotoKtp">Piilh Foto</label>
                                 <div class="invalid-feedback">
                                     Tidak boleh kosong!
                                 </div>
@@ -104,8 +167,8 @@
                     <div class="col-md-6 mb-3">
                         <label for="">Upload Foto Selfie Dengan KTP</label>
                         <div class="custom-file">
-                            <input type="file" class="form-control custom-file-input" name="foto_wajah" id="foto_wajah" required>
-                            <label class="custom-file-label border-primary" for="foto_wajah">Piilh Foto</label>
+                            <input type="file" class="form-control custom-file-input" name="fotoSelfie" id="fotoSelfie" required>
+                            <label class="custom-file-label border-primary" for="fotoSelfie">Piilh Foto</label>
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -115,9 +178,9 @@
 
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="alamat" id="setuju" required>
+                        <input class="form-check-input" type="checkbox" value="" name="setuju" id="setuju" required>
                         <label class="form-check-label" for="setuju">
-                            Setuju dengan Syarat & Ketentuan.
+                            Setuju dengan Syarat & Ketentuan (<a href="../TermofService.php">Lihat disini</a>).
                         </label>
                         <div class="invalid-feedback">
                             Anda harus setuju dengan Syarat & Ketentuan terlebih dahulu.
@@ -131,15 +194,10 @@
         </div>
     </div>
 
-    <div class="container">
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; 2020 - 2021 XLHOME Bandung. All Rights Reserved. <a href=""> Syarat & Ketentuan</a></small>
-                </div>
-            </div>
-        </footer>
-    </div>
+
+    <?php
+    include('../footer.php');
+    ?>
 
     <!-- Number only -->
     <script>

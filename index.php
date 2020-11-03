@@ -1,3 +1,6 @@
+<?php
+require "assets/config/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +13,10 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-webfont.ttf">
     <!-- /CSS -->
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- END ICON -->
 
     <!-- JS -->
     <script src="assets/jQuery/jquery-3.3.1.min.js"></script>
@@ -113,15 +120,9 @@
     </section>
     <!-- /Top Produk Mobile -->
 
-    <div class="container">
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; 2020 - 2021 XLHOME Bandung. All Rights Reserved. <a href=""> Syarat & Ketentuan</a></small>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <?php
+        include('footer.php');
+    ?>
 </body>
 
 </html>

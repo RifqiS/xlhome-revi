@@ -1,3 +1,7 @@
+<?php
+    require "../assets/config/config.php";
+    $data = query("SELECT * FROM admin")[0];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +45,7 @@
                                     <a href="https://facebook.com" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/fb-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
-                                            <div class="p-2 my-auto">@xl-home-bandung</div>
+                                            <div class="p-2 my-auto"><?= $data['sos1'] ?></div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
                                         </div>
                                     </a>
@@ -52,7 +56,7 @@
                                     <a href="https://instagram.com" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/ig-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
-                                            <div class="p-2 my-auto">@xl-home-bandung</div>
+                                            <div class="p-2 my-auto"><?= $data['sos2'] ?></div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
                                         </div>
                                     </a>
@@ -60,13 +64,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://api.whatsapp.com/send?phone=62xxxxxxxxxxx" target="_BLANK" class="text-decoration-none text-muted">
+                                    <a href="https://api.whatsapp.com/send?phone=<?= $data['wa'] ?>" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/wa-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
                                             <div class="p-2 my-auto">
                                                 <div class="flex-column">
-                                                    <div class="p-2 my-auto">Agen 1 </div>
-                                                    <div class="p-2 my-auto">08xxxxxxxxxx</div>
+                                                    <!-- <div class="p-2 my-auto">Agen 1 </div> -->
+                                                    <div class="p-2 my-auto"><?= $data['wa'] ?></div>
                                                 </div>
                                             </div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
@@ -76,29 +80,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://api.whatsapp.com/send?phone=62xxxxxxxxxxx" target="_BLANK" class="text-decoration-none text-muted">
+                                    <a href="" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
-                                            <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/wa-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
+                                            <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/telpon-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
                                             <div class="p-2 my-auto">
                                                 <div class="flex-column">
-                                                    <div class="p-2 my-auto">Agen 2 </div>
-                                                    <div class="p-2 my-auto">08xxxxxxxxxx</div>
-                                                </div>
-                                            </div>
-                                            <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
-                                        </div>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="https://api.whatsapp.com/send?phone=62xxxxxxxxxxx" target="_BLANK" class="text-decoration-none text-muted">
-                                        <div class="row">
-                                            <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/wa-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
-                                            <div class="p-2 my-auto">
-                                                <div class="flex-column">
-                                                    <div class="p-2 my-auto">Agen 3 </div>
-                                                    <div class="p-2 my-auto">08xxxxxxxxxx</div>
+                                                    <!-- <div class="p-2 my-auto">Agen 1 </div> -->
+                                                    <div class="p-2 my-auto"><?= $data['tlp'] ?></div>
                                                 </div>
                                             </div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
@@ -128,15 +116,9 @@
         </div>
     </div>
 
-    <div class="container">
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; 2020 - 2021 XLHOME Bandung. All Rights Reserved. <a href=""> Syarat & Ketentuan</a></small>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <?php
+    include('../footer.php');
+    ?>
 </body>
 
 </html>
