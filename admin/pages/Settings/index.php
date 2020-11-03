@@ -2,14 +2,14 @@
 //  include "../../assets/config/config.php"
     $data = query("SELECT * FROM `admin` WHERE id = 'Un!X1d@4pp'")[0];
 // PROSES TAMBAH
-    if (isset($_POST['tambah'])) {		
+    if (isset($_POST['simpan'])) {		
         if( eAdmin($_POST) > 0 ){
             echo "<script>
                 document.location.href='index.php?page=Settings';
             </script>";
         }else{
             echo "<script>
-                alert('Gagal Menambah Data!');
+                alert('Gagal Menyimpan Data!');
             </script>";
             mysqli_error($db);	
         }
@@ -20,14 +20,14 @@
 </div>
 <div class="container">
     <div class="row justify-content-md-center mx-n1">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
             <div class="row">
                 <div class="col">
                     <h4>Data Aplikasi</h4>
                     <div class="form-group row">
                         <label for="id_aplikasi" class="col-sm-4 col-form-label">Id Aplikasi</label>
                         <div class="col-md">
-                            <input size="200" value="<?= $data["id"];?>" type="text" class="form-control border-primary" name="id_aplikasi" id="id_aplikasi" placeholder="" required>
+                            <input size="200" value="<?= $data["id"];?>" type="text" class="form-control border-primary" name="id_aplikasi" id="id_aplikasi" placeholder="" readonly required>
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -61,12 +61,14 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="logo" class="col-sm-4 col-form-label">Logo</label>
+                        <label for="" class="col-sm-4 col-form-label">Logo</label>
+                        <img src="<?= base_url(); ?>assets/img/app/<?= $data["logo"];?>" alt="" width="200" height="100">
+                        <input type="hidden" name="logo_lama" id="logo_lama" value="<?= $data["logo"];?>">
                         <div class="col-md">
                             <div class="form-group">
                                 <div class="custom-file">
-                                    <input size="200" value="<?= $data["logo"];?>" type="file" class="form-control custom-file-input" name="logo" id="logo" required>
-                                    <label class="custom-file-label border-primary" for="foto_ktp">Piilh Foto</label>
+                                    <input size="200" value="<?= $data["logo"];?>" type="file" class="form-control custom-file-input" name="logo" id="logo">
+                                    <label class="custom-file-label border-primary" for="logo">Piilh Foto</label>
                                     <div class="invalid-feedback">
                                         Tidak boleh kosong!
                                     </div>
@@ -106,92 +108,26 @@
                             </div>
                         </div>
                     </div>
-                    <h5>Agen 1</h5>
                     <div class="form-group row">
-                        <label for="nama_agen_1" class="col-sm-4 col-form-label">Nama</label>
+                        <label for="tlp" class="col-sm-4 col-form-label">No Telepon</label>
                         <div class="col-md">
-                            <input size="200" value="<?= $data["agen"];?>" type="text" class="form-control border-primary" name="nama_agen_1" id="nama_agen_1" placeholder="">
+                            <input size="200" value="<?= $data["tlp"];?>" type="text" class="form-control border-primary" name="tlp" id="tlp" placeholder="" onkeypress="return isNumberKey(event)">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="no_tlp_agen_1" class="col-sm-4 col-form-label">No Telepon</label>
+                        <label for="wa" class="col-sm-4 col-form-label">Whatsapp</label>
                         <div class="col-md">
-                            <input size="200" value="<?= $data["tlp"];?>" type="text" class="form-control border-primary" name="no_tlp_agen_1" id="no_tlp_agen_1" placeholder="" onkeypress="return isNumberKey(event)">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="no_wa_agen_1" class="col-sm-4 col-form-label">Whatsapp</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["wa"];?>" type="text" class="form-control border-primary" name="no_wa_agen_1" id="no_wa_agen_1" placeholder="" onkeypress="return isNumberKey(event)">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <h5>Agen 2</h5>
-                    <div class="form-group row">
-                        <label for="nama_agen_2" class="col-sm-4 col-form-label">Nama</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["agen1"];?>" type="text" class="form-control border-primary" name="nama_agen_2" id="nama_agen_2" placeholder="">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="no_tlp_agen_2" class="col-sm-4 col-form-label">No Telepon</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["tlp1"];?>" type="text" class="form-control border-primary" name="no_tlp_agen_2" id="no_tlp_agen_2" placeholder="" onkeypress="return isNumberKey(event)">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="no_wa_agen_2" class="col-sm-4 col-form-label">Whatsapp</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["wa1"];?>" type="text" class="form-control border-primary" name="no_wa_agen_2" id="no_wa_agen_2" placeholder="" onkeypress="return isNumberKey(event)">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <h5>Agen 3</h5>
-                    <div class="form-group row">
-                        <label for="nama_agen_3" class="col-sm-4 col-form-label">Nama</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["agen2"];?>" type="text" class="form-control border-primary" name="nama_agen_3" id="nama_agen_3" placeholder="">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="no_tlp_agen_3" class="col-sm-4 col-form-label">No Telepon</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["tlp2"];?>" type="text" class="form-control border-primary" name="no_tlp_agen_3" id="no_tlp_agen_3" placeholder="" onkeypress="return isNumberKey(event)">
-                            <div class="invalid-feedback">
-                                Tidak boleh kosong!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="no_wa_agen_3" class="col-sm-4 col-form-label">Whatsapp</label>
-                        <div class="col-md">
-                            <input size="200" value="<?= $data["wa2"];?>" type="text" class="form-control border-primary" name="no_wa_agen_3" id="no_wa_agen_3" placeholder="" onkeypress="return isNumberKey(event)">
+                            <input size="200" value="<?= $data["wa"];?>" type="text" class="form-control border-primary" name="wa" id="wa" placeholder="" onkeypress="return isNumberKey(event)">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
                         </div>
                     </div>
                     <div class="form-group text-right">
-                        <button class="btn btn-outline-primary" name="" type="submit">Simpan</button>
+                        <button class="btn btn-outline-primary" name="simpan" type="submit">Simpan</button>
                     </div>
                 </div>
             </div>

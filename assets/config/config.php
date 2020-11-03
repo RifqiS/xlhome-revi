@@ -27,14 +27,14 @@ function query($query)
 
 // Funtion CRUD
 
-function upload($foto)
+function upload($foto, $tem)
 {
     // return false;
     $namafile   = $_FILES[$foto]['name'];
     $ukuranfile = $_FILES[$foto]['size'];
     $error      = $_FILES[$foto]['error'];
     $tmpname    = $_FILES[$foto]['tmp_name'];
-    $lokasi     = "../assets/img/upload/";
+    $lokasi     = "../assets/img/$tem/";
     // var_dump($_POST);
     // var_dump($_FILES);
     // var_dump($ukuranfile);
@@ -125,7 +125,8 @@ function iContent($iContent)
     $fitur_5    = htmlspecialchars($iContent['fitur_5']);
     $fitur_6    = htmlspecialchars($iContent['fitur_6']);
     // $logo_content    = $_FILES['logo_content']['name'];
-    $logo_content = upload("logo_content");
+    // upload("nama_input","Nama_input(dalam folder img)");
+    $logo_content = upload("logo_content", "content");
     if (!$logo_content) {
         return false;
     }
@@ -152,10 +153,11 @@ function eContent($eContent)
     if ($_FILES["logo_content"]["error"] === 4) {
         $logo_baru = $logo_lama;
     } else {
-        $file_dir = "../assets/img/upload/";
+        $file_dir = "../assets/img/content/";
         unlink($file_dir . $logo_lama);
 
-        $logo_baru = upload("logo_content");
+        // upload("nama_input","Nama_input(dalam folder img)");
+        $logo_baru = upload("logo_content", "content");
         if (!$logo_baru) {
             return false;
         }
@@ -172,7 +174,7 @@ function hContent($hContent)
 
     $id      = $hContent['hapus'];
 
-    $file_dir = "../assets/img/upload/";
+    $file_dir = "../assets/img/content/";
     $cari = query("SELECT * FROM content WHERE id = '$id'");
     $file = $cari[0]['logo'];
     unlink($file_dir . $file);
@@ -185,25 +187,33 @@ function hContent($hContent)
 function eAdmin($eAdmin)
 {
     global $db;
-    $id         = $eAdmin['id'];
-    $user       = htmlspecialchars($eAdmin['user']);
-    $pass       = htmlspecialchars($eAdmin['pass']);
-    $TitleHome  = htmlspecialchars($eAdmin['TitleHome']);
-    $logo       = htmlspecialchars($eAdmin['logo']);
-    $sos1       = htmlspecialchars($eAdmin['sos1']);
-    $sos2       = htmlspecialchars($eAdmin['sos2']);
-    $agen       = htmlspecialchars($eAdmin['agen']);
-    $agen1      = htmlspecialchars($eAdmin['agen1']);
-    $agen2      = htmlspecialchars($eAdmin['agen2']);
-    $tlp        = htmlspecialchars($eAdmin['tlp']);
-    $tlp1       = htmlspecialchars($eAdmin['tlp1']);
-    $tlp2       = htmlspecialchars($eAdmin['tlp2']);
-    $wa         = htmlspecialchars($eAdmin['wa']);
-    $wa1        = htmlspecialchars($eAdmin['wa1']);
-    $wa2        = htmlspecialchars($eAdmin['wa2']);
-    $alamat     = htmlspecialchars($eAdmin['alamat']);
+    $id        = $eAdmin['id_aplikasi'];
+    $user      = htmlspecialchars($eAdmin['username']);
+    $pass      = htmlspecialchars($eAdmin['password']);
+    $TitleHome = htmlspecialchars($eAdmin['title_home']);
+    $sos1      = htmlspecialchars($eAdmin['media_sosial_1']);
+    $sos2      = htmlspecialchars($eAdmin['media_sosial_2']);
+    $tlp       = htmlspecialchars($eAdmin['tlp']);
+    $wa        = htmlspecialchars($eAdmin['wa']);
+    $alamat    = htmlspecialchars($eAdmin['alamat_kantor']);
+    $logo_lama = htmlspecialchars($eAdmin['logo_lama']);
 
-    $query      = "UPDATE 'admin' SET user='$user',pass='$pass',TitleHome='$TitleHome',logo='$logo',sos1='$sos1',sos2='$sos2',agen='$agen',agen1='$agen1',agen2='$agen2',tlp='$tlp',tlp1='$tlp1',tlp2='$tlp2',wa='$wa',wa1='$wa1',wa2='$wa2',alamat='$alamat' WHERE id='Un!X1d@4pp'";
+
+    // cek upload gambar
+    if ($_FILES["logo"]["error"] === 4) {
+        $logo_baru = $logo_lama;
+    } else {
+        $file_dir = "../assets/img/app/";
+        unlink($file_dir . $logo_lama);
+
+        // upload("nama_input","Nama_input(dalam folder img)");
+        $logo_baru = upload("logo", "app");
+        if (!$logo_baru) {
+            return false;
+        }
+    }
+    
+    $query = "UPDATE admin SET user = '$user',pass = '$pass',TitleHome = '$TitleHome',logo = '$logo_baru',sos1 = '$sos1',sos2 = '$sos2',tlp = '$tlp',wa = '$wa',alamat = '$alamat' WHERE id = 'Un!X1d@4pp'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
