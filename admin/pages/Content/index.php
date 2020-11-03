@@ -2,6 +2,14 @@
 //  include "../../assets/config/config.php"
 $data = query("SELECT * FROM content");
 
+// FORM EDIT
+if (isset($_POST['edit'])) {
+    echo "<script>
+			document.location.href='index.php?page=EditContent';
+		</script>";
+    $_SESSION['idctn'] = $_POST['edit'];
+}
+
 // PROSES HAPUS
 if (isset($_POST['hapus'])) {
 	if( hContent($_POST) > 0 ){
@@ -61,7 +69,7 @@ if (isset($_POST['hapus'])) {
                                 <td class="align-middle"><?= $rows['cont_6']; ?></td>
                                 <td class="align-middle">
                                     <form action="" method="POST">
-                                        <button class="btn btn-warning" name="" id=""><i class="fa fa-pencil-square-o"></i></button>
+                                        <button class="btn btn-warning" name="edit" id="edit" value="<?= $rows['id']; ?>"><i class="fa fa-pencil-square-o"></i></button>
                                         <button class="btn btn-danger" name="hapus" id="hapus" value="<?= $rows['id']; ?>"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>

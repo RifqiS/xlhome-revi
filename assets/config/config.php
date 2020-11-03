@@ -82,14 +82,14 @@ function upload($foto)
 
     if (move_uploaded_file($tmpname, $lokasi . $namafilebaru)) {
         // echo "The file ". htmlspecialchars(basename($namafilebaru). " has been uploaded.";
-      } else {
+    } else {
         echo "
 				<script>
 					alert('Upload gambar gagal!');
 				</script>
 			";
         return false;
-      }
+    }
 
     return $namafilebaru;
 }
@@ -114,22 +114,52 @@ function iRegistrasi($iRegistrasi)
 function iContent($iContent)
 {
     global $db;
-    $id_content        = $iContent['id_content'];
-    $judul             = htmlspecialchars($iContent['judul']);
-    $harga             = htmlspecialchars($iContent['harga']);
-    $sub_judul         = htmlspecialchars($iContent['sub_judul']);
-    $fitur_1           = htmlspecialchars($iContent['fitur_1']);
-    $fitur_2           = htmlspecialchars($iContent['fitur_2']);
-    $fitur_3           = htmlspecialchars($iContent['fitur_3']);
-    $fitur_4           = htmlspecialchars($iContent['fitur_4']);
-    $fitur_5           = htmlspecialchars($iContent['fitur_5']);
-    $fitur_6           = htmlspecialchars($iContent['fitur_6']);
+    $id_content = $iContent['id_content'];
+    $judul      = htmlspecialchars($iContent['judul']);
+    $harga      = htmlspecialchars($iContent['harga']);
+    $sub_judul  = htmlspecialchars($iContent['sub_judul']);
+    $fitur_1    = htmlspecialchars($iContent['fitur_1']);
+    $fitur_2    = htmlspecialchars($iContent['fitur_2']);
+    $fitur_3    = htmlspecialchars($iContent['fitur_3']);
+    $fitur_4    = htmlspecialchars($iContent['fitur_4']);
+    $fitur_5    = htmlspecialchars($iContent['fitur_5']);
+    $fitur_6    = htmlspecialchars($iContent['fitur_6']);
     // $logo_content    = $_FILES['logo_content']['name'];
     $logo_content = upload("logo_content");
     if (!$logo_content) {
         return false;
     }
     $query           = "INSERT INTO content VALUES('$id_content','$judul','$logo_content','$harga','$sub_judul','$fitur_1','$fitur_2','$fitur_3','$fitur_4','$fitur_5','$fitur_6')";
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
+}
+
+function eContent($eContent)
+{
+    global $db;
+    $id_content = $eContent['id_content'];
+    $judul      = htmlspecialchars($eContent['judul']);
+    $logo_lama  = htmlspecialchars($eContent['logo_lama']);
+    $harga      = htmlspecialchars($eContent['harga']);
+    $sub_Judul   = htmlspecialchars($eContent['sub_judul']);
+    $fitur1     = htmlspecialchars($eContent['fitur_1']);
+    $fitur2     = htmlspecialchars($eContent['fitur_2']);
+    $fitur3     = htmlspecialchars($eContent['fitur_3']);
+    $fitur4     = htmlspecialchars($eContent['fitur_4']);
+    $fitur5     = htmlspecialchars($eContent['fitur_5']);
+    $fitur6     = htmlspecialchars($eContent['fitur_6']);
+
+    // cek upload gambar
+    if ($_FILES["logo_content"]["error"] === 4) {
+        $logo_baru = $logo_lama;
+    } else {
+        $logo_baru = upload("logo_content");
+        if (!$logo_baru) {
+            return false;
+        }
+    }
+
+    $query      = "UPDATE content SET judul='$judul',logo='$logo_baru',harga='$harga',sub_Judul='$sub_Judul',cont_1='$fitur1',cont_2='$fitur2',cont_3='$fitur3',cont_4='$fitur4',cont_5='$fitur5',cont_6='$fitur6' WHERE id='$id_content'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
@@ -172,26 +202,6 @@ function eAdmin($eAdmin)
     $alamat     = htmlspecialchars($eAdmin['alamat']);
 
     $query      = "UPDATE 'admin' SET user='$user',pass='$pass',TitleHome='$TitleHome',logo='$logo',sos1='$sos1',sos2='$sos2',agen='$agen',agen1='$agen1',agen2='$agen2',tlp='$tlp',tlp1='$tlp1',tlp2='$tlp2',wa='$wa',wa1='$wa1',wa2='$wa2',alamat='$alamat' WHERE id='Un!X1d@4pp'";
-    mysqli_query($db, $query);
-    return mysqli_affected_rows($db);
-}
-
-function eContent($eContent)
-{
-    global $db;
-    $id         = $eContent['id'];
-    $judul      = htmlspecialchars($eContent['judul']);
-    $logo       = htmlspecialchars($eContent['logo']);
-    $harga      = htmlspecialchars($eContent['harga']);
-    $subJudul   = htmlspecialchars($eContent['subJudul']);
-    $fitur1     = htmlspecialchars($eContent['fitur1']);
-    $fitur2     = htmlspecialchars($eContent['fitur2']);
-    $fitur3     = htmlspecialchars($eContent['fitur3']);
-    $fitur4     = htmlspecialchars($eContent['fitur4']);
-    $fitur5     = htmlspecialchars($eContent['fitur5']);
-    $fitur6     = htmlspecialchars($eContent['fitur6']);
-
-    $query      = "UPDATE content SET judul='$judul',logo='$logo',harga='$harga',subJudul='$subJudul',fitur1='$fitur1',fitur2='$fitur2',fitur3='$fitur3',fitur4='$fitur4',fitur5='$fitur5',fitur6='$fitur6' WHERE id='$id'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
