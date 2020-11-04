@@ -1,5 +1,6 @@
 <?php
 require "assets/config/config.php";
+$data = query("SELECT * FROM admin")[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,10 @@ require "assets/config/config.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XL Home Bandung</title>
+    <title><?= $data['TitleHome']; ?></title>
+
+    <!-- Bikin Icon di Tab -->
+    <link rel="shortcut icon" href="<?= $base_url; ?>assets/img/app/<?= $data['logo']; ?>">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">

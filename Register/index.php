@@ -32,6 +32,9 @@ if (isset($_POST['kirim'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL Home Bandung</title>
 
+    <!-- Bikin Icon di Tab -->
+    <link rel="shortcut icon" href="<?= $base_url; ?>/assets/img/app/<?= $data['logo']; ?>">
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-webfont.ttf">
@@ -71,18 +74,28 @@ if (isset($_POST['kirim'])) {
                         </div>
                     </div>
                 </div>
-
+                
+                <div class="form-row">
+                    <div class="col-md mb-3">
+                        <label for="alamat">Alamat Lengkap</label>
+                        <!-- <textarea class="form-control border-primary" name="alamat" id="alamat" cols="30" rows="1" placeholder="Alamat Lengkap" required></textarea> -->
+                        <input class="form-control border-primary" type="text" name="alamat" id="alamat" placeholder="Ex : Jl. Primukti II No. 99 Rt. 001/ Rw. 006" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="kecamatan">Kecamatan</label>
-                        <input type="text" class="form-control border-primary" name="kecamatan" id="kecamatan" placeholder="" required>
+                        <label for="kota">Kota</label>
+                        <input type="text" class="form-control border-primary" name="kota" id="kota" placeholder="Ex: Bandung / Kab. Bandung Barat" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="kota">Kota</label>
-                        <input type="text" class="form-control border-primary" name="kota" id="kota" placeholder="" required>
+                        <label for="kecamatan">Kecamatan</label>
+                        <input type="text" class="form-control border-primary" name="kecamatan" id="kecamatan" placeholder="Ex: Arcamanik" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
@@ -92,30 +105,20 @@ if (isset($_POST['kirim'])) {
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="desa">Desa</label>
-                        <input type="text" class="form-control border-primary" name="desa" id="desa" placeholder="" required>
+                        <input type="text" class="form-control border-primary" name="desa" id="desa" placeholder="Ex: Muarajaya" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="kodepos">Kode Pos</label>
-                        <input type="text" class="form-control border-primary" name="kodepos" id="kodepos" placeholder="" required>
+                        <input type="text" class="form-control border-primary" name="kodepos" id="kodepos" placeholder="Ex: 40696" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="col-md mb-3">
-                        <label for="alamat">Alamat Lengkap</label>
-                        <!-- <textarea class="form-control border-primary" name="alamat" id="alamat" cols="30" rows="1" placeholder="Alamat Lengkap" required></textarea> -->
-                        <input class="form-control border-primary" type="text" name="alamat" id="alamat" placeholder="Alamat Lengkap" required>
-                        <div class="invalid-feedback">
-                            Tidak boleh kosong!
-                        </div>
-                    </div>
-                </div>
 
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
@@ -180,7 +183,7 @@ if (isset($_POST['kirim'])) {
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" name="setuju" id="setuju" required>
                         <label class="form-check-label" for="setuju">
-                            Setuju dengan Syarat & Ketentuan (<a href="../TermofService.php">Lihat disini</a>).
+                        Setuju dengan <a href="<?= $base_url; ?>TermofService.php">Syarat & Ketentuan</a>.
                         </label>
                         <div class="invalid-feedback">
                             Anda harus setuju dengan Syarat & Ketentuan terlebih dahulu.
