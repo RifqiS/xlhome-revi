@@ -11,17 +11,17 @@ $id_baru = date('dmy') . sprintf("%02s", $urut);
 if (isset($_POST['kirim'])) {
     // var_dump($_FILES['logo_content']);
     // die;
-	if( iRegistrasi($_POST) > 0 ){
-		echo "<script>
+    if (iRegistrasi($_POST) > 0) {
+        echo "<script>
 			document.location.href='';
 		</script>";
-	}else{
-		echo "<script>
+    } else {
+        echo "<script>
             alert('Gagal Menambah Data!');
             document.location.href='';
 		</script>";
-		mysqli_error($db);	
-	}
+        mysqli_error($db);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -68,13 +68,24 @@ if (isset($_POST['kirim'])) {
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="paket">Paket</label>
-                        <input type="text" class="form-control border-primary" name="paket" id="paket" placeholder="" required>
+                        <!-- <input type="text" class="form-control border-primary" name="paket" id="paket" placeholder="" required> -->
+                        <select class="form-control border-primary" name="paket" id="paket" required>
+                            <option value="">Pilih Paket</option>
+                            <?php
+                            $paket = query("SELECT * FROM content");
+                            foreach ($paket as $dat) :
+                            ?>
+                                <option value="<?= $dat['id'] ?>"><?= $dat['judul'] ?></option>
+                            <?php
+                            endforeach;
+                            ?>
+                        </select>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="col-md mb-3">
                         <label for="alamat">Alamat Lengkap</label>
@@ -183,7 +194,7 @@ if (isset($_POST['kirim'])) {
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" name="setuju" id="setuju" required>
                         <label class="form-check-label" for="setuju">
-                        Setuju dengan <a href="<?= $base_url; ?>TermofService.php">Syarat & Ketentuan</a>.
+                            Setuju dengan <a href="<?= $base_url; ?>TermofService.php">Syarat & Ketentuan</a>.
                         </label>
                         <div class="invalid-feedback">
                             Anda harus setuju dengan Syarat & Ketentuan terlebih dahulu.

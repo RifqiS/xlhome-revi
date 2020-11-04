@@ -1,7 +1,7 @@
 <?php
 // Base Url
-$base_url = 'http://localhost/xlhome-revi/';
-// $base_url = 'http://localhost/2020/projek/xlhome-revi/';
+// $base_url = 'http://localhost/xlhome-revi/';
+$base_url = 'http://localhost/2020/projek/xlhome-revi/';
 $data = query("SELECT * FROM admin")[0];
 ?>
 

@@ -4,6 +4,8 @@
         unset($_SESSION['idctn']);
      }
     include "../assets/config/config.php";
+    $app = query("SELECT * FROM admin")[0];
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +43,10 @@
                 $page = $_GET['page'];
 
                 switch ($page) {
+
+                    case 'Registrasi':
+                        include 'pages/registrasi/index.php';
+                        break;
 
                     case 'Content':
                         include 'pages/content/index.php';
