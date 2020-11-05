@@ -67,43 +67,13 @@ if (isset($_POST['kirim'])) {
 
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="paket">Paket</label>
-                        <!-- <input type="text" class="form-control border-primary" name="paket" id="paket" placeholder="" required> -->
-                        <select class="form-control border-primary" name="paket" id="paket" required>
-                            <option value="">Pilih Paket</option>
-                            <?php
-                            $paket = query("SELECT * FROM content");
-                            foreach ($paket as $dat) :
-                            ?>
-                                <option value="<?= $dat['id'] ?>"><?= $dat['judul'] ?></option>
-                            <?php
-                            endforeach;
-                            ?>
-                        </select>
-                        <div class="invalid-feedback">
-                            Tidak boleh kosong!
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="col-md mb-3">
-                        <label for="alamat">Alamat Lengkap</label>
-                        <!-- <textarea class="form-control border-primary" name="alamat" id="alamat" cols="30" rows="1" placeholder="Alamat Lengkap" required></textarea> -->
-                        <input class="form-control border-primary" type="text" name="alamat" id="alamat" placeholder="Ex : Jl. Primukti II No. 99 Rt. 001/ Rw. 006" required>
-                        <div class="invalid-feedback">
-                            Tidak boleh kosong!
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
                         <label for="kota">Kota</label>
                         <input type="text" class="form-control border-primary" name="kota" id="kota" placeholder="Ex: Bandung / Kab. Bandung Barat" required>
                         <div class="invalid-feedback">
                             Tidak boleh kosong!
                         </div>
                     </div>
+
                     <div class="col-md-6 mb-3">
                         <label for="kecamatan">Kecamatan</label>
                         <input type="text" class="form-control border-primary" name="kecamatan" id="kecamatan" placeholder="Ex: Arcamanik" required>
@@ -121,6 +91,7 @@ if (isset($_POST['kirim'])) {
                             Tidak boleh kosong!
                         </div>
                     </div>
+
                     <div class="col-md-6 mb-3">
                         <label for="kodepos">Kode Pos</label>
                         <input type="text" class="form-control border-primary" name="kodepos" id="kodepos" placeholder="Ex: 40696" required>
@@ -130,7 +101,38 @@ if (isset($_POST['kirim'])) {
                     </div>
                 </div>
 
+                <div class="form-row">
+                    <div class="col-md mb-3">
+                        <label for="alamat">Alamat Lengkap</label>
+                        <!-- <textarea class="form-control border-primary" name="alamat" id="alamat" cols="30" rows="1" placeholder="Alamat Lengkap" required></textarea> -->
+                        <input class="form-control border-primary" type="text" name="alamat" id="alamat" placeholder="Ex : Jl. Primukti II No. 99 Rt. 001/ Rw. 006" required>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                </div>
 
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="paket">Paket</label>
+                        <!-- <input type="text" class="form-control border-primary" name="paket" id="paket" placeholder="" required> -->
+                        <select class="form-control border-primary" name="paket" id="paket" required>
+                            <option value="">Pilih Paket</option>
+                            <?php
+                            $paket = query("SELECT * FROM content");
+                            foreach ($paket as $dat) :
+                            ?>
+                                <option value="<?= $dat['id']; ?>"><?= $dat['judul']; ?> | <?= $dat['cont_6']; ?> | <?= number_format($dat['harga']); ?></option>
+                            <?php
+                            endforeach;
+                            ?>
+                        </select>
+                        <div class="invalid-feedback">
+                            Tidak boleh kosong!
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="nama">Nama Lengkap</label>

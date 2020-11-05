@@ -110,7 +110,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group row">
                         <label for="fitur_3" class="col-sm-4 col-form-label">Fitur 3</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_3" id="fitur_3" placeholder="" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_3" id="fitur_3" placeholder="">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -119,7 +119,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group row">
                         <label for="fitur_4" class="col-sm-4 col-form-label">Fitur 4</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_4" id="fitur_4" placeholder="" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_4" id="fitur_4" placeholder="">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -128,7 +128,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group row">
                         <label for="fitur_5" class="col-sm-4 col-form-label">Fitur 5</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_5" id="fitur_5" placeholder="" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_5" id="fitur_5" placeholder="">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -137,7 +137,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group row">
                         <label for="fitur_6" class="col-sm-4 col-form-label">Fitur 6</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_6" id="fitur_6" placeholder="" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_6" id="fitur_6" placeholder="">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>

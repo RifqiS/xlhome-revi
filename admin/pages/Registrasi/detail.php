@@ -3,6 +3,7 @@ include "../../../assets/config/config.php";
 if (isset($_POST['rowid'])) {
     $id = $_POST['rowid'];
     $cari = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registrasi LEFT JOIN content ON registrasi.paket = content.id WHERE registrasi.id = '$id'")[0];
+    mysqli_query($db, "UPDATE registrasi SET statusRead = '1' WHERE id = '$id'");
 }
 ?>
 
@@ -61,6 +62,11 @@ if (isset($_POST['rowid'])) {
         <td>Paket</td>
         <td>:</td>
         <td><?= $cari['judul']; ?></td>
+    </tr>
+    <tr>
+        <td>Speed</td>
+        <td>:</td>
+        <td><?= $cari['cont_6']; ?></td>
     </tr>
     <tr>
         <td>Harga</td>
