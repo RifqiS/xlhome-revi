@@ -35,6 +35,23 @@ $_SESSION['logo'] = $c_d['logo'];
 
 // Funtion CRUD
 
+function login($ilog){
+$user = htmlspecialchars($ilog['username']);
+$pass = htmlspecialchars($ilog['password']);
+$cek = query("SELECT * FROM admin WHERE id = 'Un!X1d@4pp'")[0];
+if($cek['user'] === $user && $cek['pass'] === $pass){
+   $_SESSION['inapp'] = 1;
+   return true;
+}
+    return false;
+}
+
+function logout(){
+    $_SESSION['inapp'] = 0;
+    session_destroy();
+   return true;
+}
+
 function upload($foto, $tem)
 {
     // return false;
