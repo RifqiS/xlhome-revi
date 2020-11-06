@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL Home Bandung</title>
     <!-- Bikin Icon di Tab -->
-    <link rel="shortcut icon" href="assets/img/logo.png">
+    <link rel="shortcut icon" href="<?= $base_url; ?>assets/img/app/<?= $data['logo']; ?>">
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-webfont.ttf">

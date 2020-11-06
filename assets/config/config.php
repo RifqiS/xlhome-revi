@@ -12,8 +12,8 @@ if (!$db) {
 
 function base_url()
 {
-    // return 'http://localhost/xlhome-revi/';
-    return 'http://localhost/2020/projek/xlhome-revi/';
+    return 'http://localhost/xlhome-revi/';
+    // return 'http://localhost/2020/projek/xlhome-revi/';
 }
 
 function query($query)
@@ -131,7 +131,7 @@ function iRegistrasi($iRegistrasi)
         return false;
     }
 
-    $query      = "INSERT INTO registrasi VALUES('$id','$alamat','$kecamatan','$kota','$desa','$kodepos','$paket','$nama','$email','$noHp','$tlp','$fotoKtp','$fotoSelfie','$timeStamp','$statusRead')";
+    $query      = "INSERT INTO registrasi VALUES('$id','$alamat','$kecamatan','$kota','$desa','$kodepos','$paket','$nama','$email','$noHp','$tlp','$fotoKtp','$fotoSelfie',null,'$statusRead')";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
