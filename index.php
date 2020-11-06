@@ -1,6 +1,7 @@
 <?php
-require "assets/config/config.php";
+include "assets/config/config.php";
 $data = query("SELECT * FROM admin")[0];
+$content = query("SELECT * FROM content");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,39 +45,21 @@ $data = query("SELECT * FROM admin")[0];
     <section class="d-none d-md-block">
         <div class="container">
             <div class="card-deck mb-3 text-center">
+                <?php
+                    foreach ($content as $rows1) :
+                ?>
                 <div class="card shadow" style="width: 18rem;">
                     <div class="card-body">
-                        <h3 class="card-title">FAMILY</h3>
-                        <h2 class="card-subtitle"><img src="assets/img/family-speed.png" alt="" srcset=""></h2>
-                        <h2 class="card-subtitle mb-2"><sup>Rp</sup>349.000<small class="text-muted">/ bulan</small></h2>
-                        <p class="card-text">Baik digunakan untuk 1-10 komputer atau gadget.</p>
-                        <p class="card-text">Wi-Fi Fiber Modem</p>
-                        <p class="card-text">IP Dynamic Private</p>
-                        <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
+                        <h3 class="card-title"><?= $rows1['judul'];?></h3>
+                        <h2 class="card-subtitle"><img src="<?= base_url();?>assets/img/content<?= $rows1['logo'];?> alt="" srcset=""></h2>
+                        <h2 class="card-subtitle mb-2"><sup>Rp</sup><?= number_format($rows1['harga']);?><small class="text-muted">/ bulan</small></h2>
+                        <p class="card-text"><?= $rows1['sub_judul'];?></p>
+                        <p class="card-text"><?= $rows1['cont_1'];?></p>
+                        <p class="card-text"><?= $rows1['cont_2'];?></p>
+                        <a href="<?= base_url();?>register" class="btn btn-outline-primary">Daftar Sekarang</a>
                     </div>
                 </div>
-                <div class="card shadow" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3 class="card-title">SUPER USERS</h3>
-                        <h2 class="card-subtitle"><img src="assets/img/super-users-speed.png" alt="" srcset=""></h2>
-                        <h2 class="card-subtitle mb-2"><sup>Rp</sup>499.000<small class="text-muted">/ bulan</small></h2>
-                        <p class="card-text">Baik digunakan untuk 11-20 komputer atau gadget.</p>
-                        <p class="card-text">Wi-Fi Fiber Modem</p>
-                        <p class="card-text">IP Dynamic Private</p>
-                        <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
-                    </div>
-                </div>
-                <div class="card shadow" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3 class="card-title">ULTIMATE</h3>
-                        <h2 class="card-subtitle"><img src="assets/img/ultimate-speed.png" alt="" srcset=""></h2>
-                        <h2 class="card-subtitle mb-2"><sup>Rp</sup>999.000<small class="text-muted">/ bulan</small></h2>
-                        <p class="card-text">Baik digunakan untuk 21-30 komputer atau gadget.</p>
-                        <p class="card-text">Wi-Fi Fiber Modem</p>
-                        <p class="card-text">IP Dynamic Private</p>
-                        <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -86,39 +69,21 @@ $data = query("SELECT * FROM admin")[0];
     <section class="d-block d-md-none">
         <div class="container">
             <div class="card-deck mb-3 text-center">
+                <?php
+                    foreach ($content as $rows1) :
+                ?>
                 <div class="card shadow mx-auto" style="width: 18rem;">
                     <div class="card-body">
-                        <h3 class="card-title">FAMILY</h3>
-                        <h2 class="card-subtitle"><img src="assets/img/family-speed.png" alt="" srcset=""></h2>
-                        <h2 class="card-subtitle mb-2"><sup>Rp</sup>349.000<small class="text-muted">/ bulan</small></h2>
-                        <p class="card-text">Baik digunakan untuk 1-10 komputer atau gadget.</p>
-                        <p class="card-text">Wi-Fi Fiber Modem</p>
-                        <p class="card-text">IP Dynamic Private</p>
-                        <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
+                        <h3 class="card-title"><?= $rows1['judul'];?></h3>
+                        <h2 class="card-subtitle"><img src="<?= base_url();?>assets/img/content/<?= $rows1['logo'];?> alt="" srcset=""></h2>
+                        <h2 class="card-subtitle mb-2"><sup>Rp</sup><?= number_format($rows1['harga']);?><small class="text-muted">/ bulan</small></h2>
+                        <p class="card-text"><?= $rows1['sub_judul'];?></p>
+                        <p class="card-text"><?= $rows1['cont_1'];?></p>
+                        <p class="card-text"><?= $rows1['cont_2'];?></p>
+                        <a href="<?= base_url();?>register" class="btn btn-outline-primary">Daftar Sekarang</a>
                     </div>
                 </div>
-                <div class="card shadow mx-auto" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3 class="card-title">SUPER USERS</h3>
-                        <h2 class="card-subtitle"><img src="assets/img/super-users-speed.png" alt="" srcset=""></h2>
-                        <h2 class="card-subtitle mb-2"><sup>Rp</sup>499.000<small class="text-muted">/ bulan</small></h2>
-                        <p class="card-text">Baik digunakan untuk 11-20 komputer atau gadget.</p>
-                        <p class="card-text">Wi-Fi Fiber Modem</p>
-                        <p class="card-text">IP Dynamic Private</p>
-                        <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
-                    </div>
-                </div>
-                <div class="card shadow mx-auto" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3 class="card-title">ULTIMATE</h3>
-                        <h2 class="card-subtitle"><img src="assets/img/ultimate-speed.png" alt="" srcset=""></h2>
-                        <h2 class="card-subtitle mb-2"><sup>Rp</sup>999.000<small class="text-muted">/ bulan</small></h2>
-                        <p class="card-text">Baik digunakan untuk 21-30 komputer atau gadget.</p>
-                        <p class="card-text">Wi-Fi Fiber Modem</p>
-                        <p class="card-text">IP Dynamic Private</p>
-                        <a href="#" class="btn btn-outline-primary">Daftar Sekarang</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
