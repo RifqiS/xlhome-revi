@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2020 at 05:35 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Waktu pembuatan: 06 Nov 2020 pada 09.42
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -41,16 +41,16 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `user`, `pass`, `TitleHome`, `logo`, `sos1`, `sos2`, `tlp`, `wa`, `alamat`) VALUES
-('Un!X1d@4pp', 'admin', 'admin', 'XL Home', '5fa16b68cd57c.png', '@XLHomeBandung', '@XLHomeBandung', 8214124, 214124, 'Jl. L. L. R.E. Martadinata No.7, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117');
+('Un!X1d@4pp', 'admin', 'admin', 'XL Home', '5fa16b68cd57c.png', '@XLHomeBandung', '@XLHomeBandung', 8214124, 214124, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15842.5451974668!2d107.72809224999999!3d-6.9339996500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c339604eb345%3A0xfce20741362af34e!2sGriya%20Grand%20Cinunuk!5e0!3m2!1sid!2sid!4v1604506502515!5m2!1sid!2sid');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `content`
+-- Struktur dari tabel `content`
 --
 
 CREATE TABLE `content` (
@@ -68,18 +68,18 @@ CREATE TABLE `content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `content`
+-- Dumping data untuk tabel `content`
 --
 
 INSERT INTO `content` (`id`, `judul`, `logo`, `harga`, `sub_judul`, `cont_1`, `cont_2`, `cont_3`, `cont_4`, `cont_5`, `cont_6`) VALUES
-('03112000', 'Content 1', '5fa162a74dac8.jpg', 100000, 'sub judul', 'Fitur 1', 'Fitur 2', 'Fitur 3', 'Fitur 4', 'Fitur 6', 'Fitur 7'),
+('03112000', 'Content 1', '5fa4fb5edd8e5.jpg', 100000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'Fitur 3', 'Fitur 4', 'Fitur 6', '30'),
 ('04112001', 'Content 2', '5fa2d6212f7e8.jpg', 10000, 'sub judul2', 'Fitur 1', 'Fitur 2', 'Fitur 3', 'Fitur 4', 'Fitur 6', 'Fitur 7'),
 ('04112002', 'Content 3', '5fa2d635ab37b.jpg', 1000, 'sub judul', 'Fitur 1', 'Fitur 2', 'Fitur 3', 'Fitur 4', 'Fitur 6', 'Fitur 7');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registrasi`
+-- Struktur dari tabel `registrasi`
 --
 
 CREATE TABLE `registrasi` (
@@ -101,7 +101,7 @@ CREATE TABLE `registrasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `registrasi`
+-- Dumping data untuk tabel `registrasi`
 --
 
 INSERT INTO `registrasi` (`id`, `alamat`, `kecamatan`, `kota`, `desa`, `kodepos`, `paket`, `nama`, `email`, `noHp`, `tlp`, `fotoKtp`, `fotoSelfie`, `timeStamp`, `statusRead`) VALUES
@@ -112,19 +112,19 @@ INSERT INTO `registrasi` (`id`, `alamat`, `kecamatan`, `kota`, `desa`, `kodepos`
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `content`
+-- Indeks untuk tabel `content`
 --
 ALTER TABLE `content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `registrasi`
+-- Indeks untuk tabel `registrasi`
 --
 ALTER TABLE `registrasi`
   ADD PRIMARY KEY (`id`);
