@@ -117,7 +117,7 @@ if (isset($_POST['simpan'])) {
                     <div class="form-group row">
                         <label for="fitur_3" class="col-sm-4 col-form-label">Fitur 3</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_3" id="fitur_3" placeholder="" value="<?= $data["cont_3"];?>" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_3" id="fitur_3" placeholder="" value="<?= $data["cont_3"];?>">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -126,7 +126,7 @@ if (isset($_POST['simpan'])) {
                     <div class="form-group row">
                         <label for="fitur_4" class="col-sm-4 col-form-label">Fitur 4</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_4" id="fitur_4" placeholder="" value="<?= $data["cont_4"];?>" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_4" id="fitur_4" placeholder="" value="<?= $data["cont_4"];?>">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -135,7 +135,7 @@ if (isset($_POST['simpan'])) {
                     <div class="form-group row">
                         <label for="fitur_5" class="col-sm-4 col-form-label">Fitur 5</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_5" id="fitur_5" placeholder="" value="<?= $data["cont_5"];?>" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_5" id="fitur_5" placeholder="" value="<?= $data["cont_5"];?>">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
@@ -144,7 +144,7 @@ if (isset($_POST['simpan'])) {
                     <div class="form-group row">
                         <label for="fitur_6" class="col-sm-4 col-form-label">Fitur 6</label>
                         <div class="col-md">
-                            <input size="200" type="text" class="form-control border-primary" name="fitur_6" id="fitur_6" placeholder="" value="<?= $data["cont_6"];?>" required>
+                            <input size="200" type="text" class="form-control border-primary" name="fitur_6" id="fitur_6" placeholder="" value="<?= $data["cont_6"];?>">
                             <div class="invalid-feedback">
                                 Tidak boleh kosong!
                             </div>
