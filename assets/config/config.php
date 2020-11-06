@@ -12,8 +12,8 @@ if (!$db) {
 
 function base_url()
 {
-    return 'http://localhost/xlhome-revi/';
-    // return 'http://localhost/2020/projek/xlhome-revi/';
+    // return 'http://localhost/xlhome-revi/';
+    return 'http://localhost/2020/projek/xlhome-revi/';
 }
 
 function query($query)
