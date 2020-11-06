@@ -51,7 +51,7 @@ $content = query("SELECT * FROM content");
                 <div class="card shadow" style="width: 18rem;">
                     <div class="card-body">
                         <h3 class="card-title"><?= $rows1['judul'];?></h3>
-                        <h2 class="card-subtitle"><img src="<?= base_url();?>assets/img/content<?= $rows1['logo'];?>" alt="" srcset=""></h2>
+                        <h2 class="card-subtitle"><img src="<?= base_url(); ?>assets/img/content/<?= $rows1['logo']; ?>" alt="" srcset="" width="186" height="155"></h2>
                         <h2 class="card-subtitle mb-2"><sup>Rp</sup><?= number_format($rows1['harga']);?><small class="text-muted">/ bulan</small></h2>
                         <p class="card-text"><?= $rows1['sub_judul'];?></p>
                         <p class="card-text"><?= $rows1['cont_1'];?></p>
@@ -75,7 +75,7 @@ $content = query("SELECT * FROM content");
                 <div class="card shadow mx-auto" style="width: 18rem;">
                     <div class="card-body">
                         <h3 class="card-title"><?= $rows1['judul'];?></h3>
-                        <h2 class="card-subtitle"><img src="<?= base_url();?>assets/img/content/<?= $rows1['logo'];?>" alt="" srcset=""></h2>
+                        <h2 class="card-subtitle"><img src="<?= base_url(); ?>assets/img/content/<?= $rows1['logo']; ?>" alt="" srcset="" width="186" height="155"></h2>
                         <h2 class="card-subtitle mb-2"><sup>Rp</sup><?= number_format($rows1['harga']);?><small class="text-muted">/ bulan</small></h2>
                         <p class="card-text"><?= $rows1['sub_judul'];?></p>
                         <p class="card-text"><?= $rows1['cont_1'];?></p>

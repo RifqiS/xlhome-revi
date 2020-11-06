@@ -28,17 +28,8 @@ $reg = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registr
                         $no = 1;
                         foreach ($reg as $rows) :
                             $st = $rows['statusRead'];
-                            if ($st == 0) {
-                                echo "<tr style='background-color: #ff5b5b'>";
-                                $str = "Not Read";
-                            }elseif($st == 1){
-                                echo "<tr style='background-color: #0080ff'>";
-                                $str = "Readed";
-                            }elseif($st == 2){
-                                echo "<tr style='background-color: #c0c0c0'>";
-                                $str = "Export";
-                            }
                         ?>
+                            <tr>
                                 <td class="align-middle"><?= $no++; ?></td>
                                 <td class="align-middle"><?= $rows['nama']; ?></td>
                                 <td class="align-middle"><?= $rows['email']; ?></td>
@@ -50,7 +41,15 @@ $reg = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registr
                                     <?= $rows['kodepos']; ?>
                                     <?= $rows['alamat']; ?>
                                 </td>
-                                <td class="align-middle"><?= $str; ?></td>
+                                <?php
+                                if ($st == 0) {
+                                    echo '<td class="align-middle" style="color: #ff5b5b;">Not Read</td>';
+                                } elseif ($st == 1) {
+                                    echo '<td class="align-middle" style="color: #0080ff;">Readed</td>';
+                                } elseif ($st == 2) {
+                                    echo '<td class="align-middle" style="color: #c0c0c0;">Report</td>';
+                                }
+                                ?>
                                 <td class="align-middle">
                                     <form action="" method="POST">
                                         <!-- <button class="btn btn-warning" name="edit" id="edit" value="<?= $rows['regid']; ?>"><i class="fa fa-pencil-square-o"></i></button> -->

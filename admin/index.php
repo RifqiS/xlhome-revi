@@ -1,11 +1,18 @@
 <?php
-    if (isset($_SESSION['CREATE_URI']) && $_SESSION['CREATE_URI'] !== $_SERVER['REQUEST_URI']) {
-        unset($_SESSION['CREATE_URI']);
-        unset($_SESSION['idctn']);
-     }
-    include "../assets/config/config.php";
-    $app = query("SELECT * FROM admin")[0];
-    
+include "../assets/config/config.php";
+$app = query("SELECT * FROM admin")[0];
+
+if (isset($_SESSION['CREATE_URI']) && $_SESSION['CREATE_URI'] !== $_SERVER['REQUEST_URI']) {
+    unset($_SESSION['CREATE_URI']);
+    unset($_SESSION['idctn']);
+}
+
+if ($_SESSION['inapp'] == 0) {
+    echo "<script>
+        document.location.href='login';
+    </script>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,9 +71,9 @@
                         include 'pages/settings/index.php';
                         break;
 
-                    case 'Logout':
-                        include 'pages/Logout.php';
-                        break;
+                    // case 'Logout':
+                    //     include 'pages/logout.php';
+                    //     break;
 
                     default:
             ?>

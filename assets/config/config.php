@@ -12,8 +12,8 @@ if (!$db) {
 
 function base_url()
 {
-    return 'http://localhost/xlhome-revi/';
-    // return 'http://localhost/2020/projek/xlhome-revi/';
+    // return 'http://localhost/xlhome-revi/';
+    return 'http://localhost/2020/projek/xlhome-revi/';
 }
 
 function query($query)
@@ -34,6 +34,23 @@ $_SESSION['logo'] = $c_d['logo'];
 
 
 // Funtion CRUD
+
+function login($ilog){
+$user = htmlspecialchars($ilog['username']);
+$pass = htmlspecialchars($ilog['password']);
+$cek = query("SELECT * FROM admin WHERE id = 'Un!X1d@4pp'")[0];
+if($cek['user'] === $user && $cek['pass'] === $pass){
+   $_SESSION['inapp'] = 1;
+   return true;
+}
+    return false;
+}
+
+function logout(){
+    $_SESSION['inapp'] = 0;
+    session_destroy();
+   return true;
+}
 
 function upload($foto, $tem)
 {
