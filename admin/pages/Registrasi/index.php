@@ -11,7 +11,7 @@ $reg = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registr
             <div class="col">
                 <a class="btn btn-primary text-decoration-none" href="?page=AddContent"><i class="fa fa-plus"></i> Tambah Data</a>
                 <a class="btn btn-success text-decoration-none" target="_blank" href="pages/registrasi/export_excel.php"><i class="fa fa-floppy-o"></i> EXPORT KE EXCEL</a>
-                <table class="table table-hover">
+                <table class="table table-hover" name="tbl_poli" id="tbl_poli">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -101,4 +101,9 @@ $reg = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registr
             });
         });
     });
+    $(document).ready(function(){
+		$('#tbl_dok').DataTable({
+			responsive: true
+		});
+	});
 </script>

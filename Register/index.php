@@ -122,7 +122,7 @@ if (isset($_POST['kirim'])) {
                             $paket = query("SELECT * FROM content");
                             foreach ($paket as $dat) :
                             ?>
-                                <option value="<?= $dat['id']; ?>"><?= $dat['judul']; ?> | <?= $dat['cont_6']; ?> | <?= number_format($dat['harga']); ?></option>
+                                <option value="<?= $dat['id']; ?>"><?= $dat['judul']; ?> | <?= $dat['cont_6']; ?> | Rp. <?= number_format($dat['harga']); ?></option>
                             <?php
                             endforeach;
                             ?>

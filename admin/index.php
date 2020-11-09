@@ -34,6 +34,8 @@ if ($_SESSION['inapp'] == 0) {
     <script src="../assets/jQuery/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <!-- END JS -->
+    <!-- DataTables CSS -->
+    <link href="<?= base_url()?>assets/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 </head>
 
 <body>

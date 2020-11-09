@@ -48,7 +48,7 @@
                                     <a href="https://facebook.com/" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/fb-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
-                                            <div class="p-2 my-auto"><?= $data['sos1'] ?></div>
+                                            <div class="p-2 my-auto"><i class="fa fa-facebook"></i><?= $data['sos1'] ?></div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
                                         </div>
                                     </a>
@@ -59,7 +59,7 @@
                                     <a href="https://instagram.com/" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/ig-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
-                                            <div class="p-2 my-auto"><?= $data['sos2'] ?></div>
+                                            <div class="p-2 my-auto"><i class="fa fa-instagram"></i><?= $data['sos2'] ?></div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
                                         </div>
                                     </a>
@@ -73,7 +73,7 @@
                                             <div class="p-2 my-auto">
                                                 <div class="flex-column">
                                                     <!-- <div class="p-2 my-auto">Agen 1 </div> -->
-                                                    <div class="p-2 my-auto"><?= $data['wa'] ?></div>
+                                                    <div class="p-2 my-auto"><i class="fa fa-whatsapp"></i><?= $data['wa'] ?></div>
                                                 </div>
                                             </div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
@@ -89,7 +89,7 @@
                                             <div class="p-2 my-auto">
                                                 <div class="flex-column">
                                                     <!-- <div class="p-2 my-auto">Agen 1 </div> -->
-                                                    <div class="p-2 my-auto"><?= $data['tlp'] ?></div>
+                                                    <div class="p-2 my-auto"><i class="fa fa-phone-square"></i><?= $data['tlp'] ?></div>
                                                 </div>
                                             </div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
@@ -113,7 +113,7 @@
         <div class="d-flex justify-content-center">
             <div class="col-md-6">
                 <div class="row">
-                    <div class="p-2 my-auto"><i class="fa fa-map-marker"></i> 
+                    <div class="p-2 my-auto">
                     <iframe src="<?= $data['alamat'] ?>" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>

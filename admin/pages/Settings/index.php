@@ -91,7 +91,7 @@
                 <div class="col">
                     <h4>Kontak</h4>
                     <div class="form-group row">
-                        <label for="media_sosial_1" class="col-sm-4 col-form-label">Sosial Media 1</label>
+                        <label for="media_sosial_1" class="col-sm-4 col-form-label">Facebook</label>
                         <div class="col-md">
                             <input size="200" value="<?= $data["sos1"];?>" type="text" class="form-control border-primary" name="media_sosial_1" id="media_sosial_1" placeholder="">
                             <div class="invalid-feedback">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="media_sosial_2" class="col-sm-4 col-form-label">Sosial Media 2</label>
+                        <label for="media_sosial_2" class="col-sm-4 col-form-label">Instagram   </label>
                         <div class="col-md">
                             <input size="200" value="<?= $data["sos2"];?>" type="text" class="form-control border-primary" name="media_sosial_2" id="media_sosial_2" placeholder="">
                             <div class="invalid-feedback">
