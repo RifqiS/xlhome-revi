@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Nov 2020 pada 09.42
+-- Waktu pembuatan: 09 Nov 2020 pada 03.27
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.11
 
@@ -72,9 +72,9 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`id`, `judul`, `logo`, `harga`, `sub_judul`, `cont_1`, `cont_2`, `cont_3`, `cont_4`, `cont_5`, `cont_6`) VALUES
-('03112000', 'Content 1', '5fa4fb5edd8e5.jpg', 100000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'Fitur 3', 'Fitur 4', 'Fitur 6', '30'),
-('04112001', 'Content 2', '5fa2d6212f7e8.jpg', 10000, 'sub judul2', 'Fitur 1', 'Fitur 2', 'Fitur 3', 'Fitur 4', 'Fitur 6', 'Fitur 7'),
-('04112002', 'Content 3', '5fa2d635ab37b.jpg', 1000, 'sub judul', 'Fitur 1', 'Fitur 2', 'Fitur 3', 'Fitur 4', 'Fitur 6', 'Fitur 7');
+('03112000', 'Family Pack', '5fa4fb5edd8e5.jpg', 10000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', '30 mbps (ini untuk pengingat speed aja pas di registrasi)'),
+('04112001', 'Premium Pack', '5fa557af55e22.jpg', 200000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'Fitur 3', 'Fitur 4', 'Fitur 6', '50 mbps'),
+('04112002', 'Ultimate Pack', '5fa8a0c03ffa7.jpg', 350000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'Fitur 3', 'Fitur 4', 'Fitur 6', '100 mbps');
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,8 @@ CREATE TABLE `registrasi` (
 --
 
 INSERT INTO `registrasi` (`id`, `alamat`, `kecamatan`, `kota`, `desa`, `kodepos`, `paket`, `nama`, `email`, `noHp`, `tlp`, `fotoKtp`, `fotoSelfie`, `timeStamp`, `statusRead`) VALUES
-('03112000', 'alamat', 'kecamatan', 'kota', 'desa', 'kodepos', '', 'nama', 'email@gmail.com', 902148, 8214124, '5fa17eea313a7.jpg', '5fa17eea3169b.jpg', '0000-00-00 00:00:00', 0);
+('03112000', 'alamat', 'kecamatan', 'kota', 'desa', 'kodepos', '', 'nama', 'email@gmail.com', 902148, 8214124, '5fa17eea313a7.jpg', '5fa17eea3169b.jpg', '0000-00-00 00:00:00', 0),
+('09112001', 'asfagdaljadulgdva', 'arcaamik', 'bandung', 'muarajaya', '40696', '04112002', 'qwe', 'asfa@gmail.com', 8956245, 2889416, '5fa8a5f2cbcac.png', '5fa8a5f2cc02b.png', '2020-11-09 02:14:40', 1);
 
 --
 -- Indexes for dumped tables
