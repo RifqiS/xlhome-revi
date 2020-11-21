@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Nov 2020 pada 03.27
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.11
+-- Generation Time: Nov 21, 2020 at 09:46 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -33,6 +33,7 @@ CREATE TABLE `admin` (
   `pass` text NOT NULL,
   `TitleHome` text NOT NULL,
   `logo` varchar(200) NOT NULL,
+  `logo2` varchar(200) NOT NULL,
   `sos1` text NOT NULL,
   `sos2` text NOT NULL,
   `tlp` int(15) NOT NULL,
@@ -41,16 +42,16 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `user`, `pass`, `TitleHome`, `logo`, `sos1`, `sos2`, `tlp`, `wa`, `alamat`) VALUES
-('Un!X1d@4pp', 'admin', 'admin', 'XL Home', '5fa16b68cd57c.png', '@XLHomeBandung', '@XLHomeBandung', 8214124, 214124, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15842.5451974668!2d107.72809224999999!3d-6.9339996500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c339604eb345%3A0xfce20741362af34e!2sGriya%20Grand%20Cinunuk!5e0!3m2!1sid!2sid!4v1604506502515!5m2!1sid!2sid');
+INSERT INTO `admin` (`id`, `user`, `pass`, `TitleHome`, `logo`, `logo2`, `sos1`, `sos2`, `tlp`, `wa`, `alamat`) VALUES
+('Un!X1d@4pp', 'admin', 'admin', 'XL Home', '5fb8ca2334f2d.png', '5fb8ca23351a6.png', '@XLHomeBandung', '@XLHomeBandung', 2147483647, 2147483647, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126745.81129709996!2d107.51462800673565!3d-6.913712284218133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e98450572439%3A0x31af8fb73c0cc230!2sXL%20Home%20Fiber%20Bandung!5e0!3m2!1sen!2sid!4v1605935066720!5m2!1sen!2sid');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `content`
+-- Table structure for table `content`
 --
 
 CREATE TABLE `content` (
@@ -68,18 +69,18 @@ CREATE TABLE `content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `content`
+-- Dumping data for table `content`
 --
 
 INSERT INTO `content` (`id`, `judul`, `logo`, `harga`, `sub_judul`, `cont_1`, `cont_2`, `cont_3`, `cont_4`, `cont_5`, `cont_6`) VALUES
-('03112000', 'Family Pack', '5fa4fb5edd8e5.jpg', 10000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', '30 mbps (ini untuk pengingat speed aja pas di registrasi)'),
+('03112000', 'Family Pack', '5fa4fb5edd8e5.jpg', 89000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', 'ini untuk fitur tambahan bisa di munculin kalo mau pas production', '30 mbps (ini untuk pengingat speed aja pas di registrasi)'),
 ('04112001', 'Premium Pack', '5fa557af55e22.jpg', 200000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'Fitur 3', 'Fitur 4', 'Fitur 6', '50 mbps'),
 ('04112002', 'Ultimate Pack', '5fa8a0c03ffa7.jpg', 350000, 'Baik digunakan untuk 1-10 komputer atau gadget.', 'Wi-Fi Fiber Modem', 'IP Dynamic Private', 'Fitur 3', 'Fitur 4', 'Fitur 6', '100 mbps');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `registrasi`
+-- Table structure for table `registrasi`
 --
 
 CREATE TABLE `registrasi` (
@@ -101,31 +102,31 @@ CREATE TABLE `registrasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `registrasi`
+-- Dumping data for table `registrasi`
 --
 
 INSERT INTO `registrasi` (`id`, `alamat`, `kecamatan`, `kota`, `desa`, `kodepos`, `paket`, `nama`, `email`, `noHp`, `tlp`, `fotoKtp`, `fotoSelfie`, `timeStamp`, `statusRead`) VALUES
-('03112000', 'alamat', 'kecamatan', 'kota', 'desa', 'kodepos', '', 'nama', 'email@gmail.com', 902148, 8214124, '5fa17eea313a7.jpg', '5fa17eea3169b.jpg', '0000-00-00 00:00:00', 0),
-('09112001', 'asfagdaljadulgdva', 'arcaamik', 'bandung', 'muarajaya', '40696', '04112002', 'qwe', 'asfa@gmail.com', 8956245, 2889416, '5fa8a5f2cbcac.png', '5fa8a5f2cc02b.png', '2020-11-09 02:14:40', 1);
+('03112000', 'alamat', 'kecamatan', 'kota', 'desa', 'kodepos', '', 'nama', 'email@gmail.com', 902148, 8214124, '5fa17eea313a7.jpg', '5fa17eea3169b.jpg', '2020-11-21 07:49:32', 1),
+('09112001', 'asfagdaljadulgdva', 'arcaamik', 'bandung', 'muarajaya', '40696', '04112002', 'qwe', 'asfa@gmail.com', 8956245, 2889416, '5fa8a5f2cbcac.png', '5fa8a5f2cc02b.png', '2020-11-08 19:14:40', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `content`
+-- Indexes for table `content`
 --
 ALTER TABLE `content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `registrasi`
+-- Indexes for table `registrasi`
 --
 ALTER TABLE `registrasi`
   ADD PRIMARY KEY (`id`);
