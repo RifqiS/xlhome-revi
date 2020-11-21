@@ -3,13 +3,13 @@
 $reg = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registrasi LEFT JOIN content ON registrasi.paket = content.id");
 ?>
 <div class="container mx-auto text-center">
-    <h2>Content</h2>
+    <h2>Daftar Registrasi</h2>
 </div>
 <div class="container">
     <div class="row justify-content-md-center mx-n1">
         <div class="row">
             <div class="col">
-                <a class="btn btn-primary text-decoration-none" href="?page=AddContent"><i class="fa fa-plus"></i> Tambah Data</a>
+                <!-- <a class="btn btn-primary text-decoration-none" href="?page=AddContent"><i class="fa fa-plus"></i> Tambah Data</a> -->
                 <a class="btn btn-success text-decoration-none" target="_blank" href="pages/registrasi/export_excel.php"><i class="fa fa-floppy-o"></i> EXPORT KE EXCEL</a>
                 <table class="table table-hover" name="tbl_poli" id="tbl_poli">
                     <thead>

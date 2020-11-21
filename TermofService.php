@@ -1,3 +1,6 @@
+<?php    
+    include "assets/config/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL Home Bandung</title>
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/app/xlhome-logo.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">

@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-sm-4 col-form-label">Logo</label>
+                        <label for="" class="col-sm-4 col-form-label">Logo Utama</label>
                         <img src="<?= base_url(); ?>assets/img/app/<?= $data["logo"];?>" alt="" width="200" height="100">
                         <input type="hidden" name="logo_lama" id="logo_lama" value="<?= $data["logo"];?>">
                         <div class="col-md">
@@ -69,6 +69,22 @@
                                 <div class="custom-file">
                                     <input size="200" value="<?= $data["logo"];?>" type="file" class="form-control custom-file-input" name="logo" id="logo">
                                     <label class="custom-file-label border-primary" for="logo">Piilh Foto</label>
+                                    <div class="invalid-feedback">
+                                        Tidak boleh kosong!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-4 col-form-label">Sub Logo</label>
+                        <img src="<?= base_url(); ?>assets/img/app/<?= $data["logo2"];?>" alt="" width="200" height="100">
+                        <input type="hidden" name="logo2_lama" id="logo2_lama" value="<?= $data["logo2"];?>">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input size="200" value="<?= $data["logo2"];?>" type="file" class="form-control custom-file-input" name="logo2" id="logo2">
+                                    <label class="custom-file-label border-primary" for="logo2">Piilh Foto</label>
                                     <div class="invalid-feedback">
                                         Tidak boleh kosong!
                                     </div>

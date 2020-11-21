@@ -12,8 +12,8 @@ if (!$db) {
 
 function base_url()
 {
-    return 'http://localhost/xlhome-revi/';
-    // return 'http://localhost/2020/projek/xlhome-revi/';
+    // return 'http://localhost/xlhome-revi/';
+    return 'http://localhost/2020/projek/xlhome-revi/';
 }
 
 function query($query)
@@ -229,7 +229,7 @@ function hContent($hContent)
 function eAdmin($eAdmin)
 {
     global $db;
-    $id        = $eAdmin['id_aplikasi'];
+    $id        = "Un!X1d@4pp";
     $user      = htmlspecialchars($eAdmin['username']);
     $pass      = htmlspecialchars($eAdmin['password']);
     $TitleHome = htmlspecialchars($eAdmin['title_home']);
@@ -239,6 +239,10 @@ function eAdmin($eAdmin)
     $wa        = htmlspecialchars($eAdmin['wa']);
     $alamat    = htmlspecialchars($eAdmin['alamat_kantor']);
     $logo_lama = htmlspecialchars($eAdmin['logo_lama']);
+    $logo2_lama = htmlspecialchars($eAdmin['logo2_lama']);
+
+    // var_dump($_FILES);
+    // die;
 
 
     // cek upload gambar
@@ -254,8 +258,21 @@ function eAdmin($eAdmin)
             return false;
         }
     }
+
+    if ($_FILES["logo2"]["error"] === 4) {
+        $logo2_baru = $logo2_lama;
+    } else {
+        $file_dir = "../assets/img/app/";
+        unlink($file_dir . $logo2_lama);
+
+        // upload("nama_input","Nama_input(dalam folder img)");
+        $logo2_baru = upload("logo2", "app");
+        if (!$logo2_baru) {
+            return false;
+        }
+    }
     
-    $query = "UPDATE admin SET user = '$user',pass = '$pass',TitleHome = '$TitleHome',logo = '$logo_baru',sos1 = '$sos1',sos2 = '$sos2',tlp = '$tlp',wa = '$wa',alamat = '$alamat' WHERE id = 'Un!X1d@4pp'";
+    $query = "UPDATE admin SET user = '$user',pass = '$pass',TitleHome = '$TitleHome',logo = '$logo_baru',logo2 = '$logo2_baru',sos1 = '$sos1',sos2 = '$sos2',tlp = '$tlp',wa = '$wa',alamat = '$alamat' WHERE id = '$id'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }

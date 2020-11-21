@@ -9,9 +9,9 @@ $c_a_f = query("SELECT * FROM admin")[0];
                 <div class="row">
                     <div class="m-4">
                         <ul class="list-unstyled">
-                            <li><a class="text-decoration-none text-white" href="<?= $base_url; ?>TermofService.php"> Syarat & Ketentuan</a></li>
+                            <li><a class="text-decoration-none text-white" href="<?= base_url(); ?>TermofService.php"> Syarat & Ketentuan</a></li>
                             <br>
-                            <li><a class="text-decoration-none text-white" href="<?= $base_url; ?>cookie.php"> Privasi</a></li>
+                            <li><a class="text-decoration-none text-white" href="<?= base_url(); ?>cookie.php"> Privasi</a></li>
                         </ul>
                     </div>
                     <div class="m-4">

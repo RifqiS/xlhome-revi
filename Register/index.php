@@ -31,6 +31,7 @@ if (isset($_POST['kirim'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL Home Bandung</title>
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/app/xlhome-logo.png">
 
     <!-- Bikin Icon di Tab -->
     <link rel="shortcut icon" href="<?= $base_url; ?>/assets/img/app/<?= $data['logo']; ?>">
@@ -55,7 +56,7 @@ if (isset($_POST['kirim'])) {
     include "../nav.php";
     ?>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 text-primary">Formulir Registrasi</h1>
+        <h1 class="display-4 tfon">Formulir Registrasi</h1>
         <p class="lead">Silahkan isi formulir di bawah ini dengan lengkap</p>
     </div>
 

@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL Home Bandung</title>
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/app/xlhome-logo.png">
 
     <!-- Bikin Icon di Tab -->
     <link rel="shortcut icon" href="<?= $base_url; ?>assets/img/app/<?= $data['logo']; ?>">
@@ -33,7 +34,7 @@
     include "../nav.php";
     ?>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-6 text-primary">Silahkan Hubungi Kami</h1>
+        <h1 class="display-6 tfon">Silahkan Hubungi Kami</h1>
     </div>
 
     <!-- Kontak -->
@@ -105,7 +106,7 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h4 class="display-6 text-primary">Atau Langsung Mendatangi Kantor Kami Di</h4>
+        <h4 class="display-6 tfon">Atau Langsung Mendatangi Kantor Kami Di</h4>
     </div>
 
     <!-- Alamat -->
