@@ -25,7 +25,8 @@ $content = query("SELECT * FROM content");
     <!-- END ICON -->
 
     <!-- JS -->
-    <script src="assets/jQuery/jquery-3.3.1.min.js"></script>
+    <!-- <script src="assets/jQuery/jquery-3.3.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- /JS -->
 </head>
@@ -42,13 +43,13 @@ $content = query("SELECT * FROM content");
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col">
-                            <img class="d-block w-100" height="350" src="<?= base_url(); ?>assets/img/banner/Banner-XL-HomeDesktop-new.png" alt="slide">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-home-page-Mesh-WiFiDesktop.png" alt="slide">
                         </div>
                         <div class="col col-6 d-none d-md-block">
                             <div class="row h-100 justify-content-center align-items-center">
                                 <div class="col">
-                                    <h2 class="font-weight-bold tfon">Hiburan Tanpa Batas</h2>
-                                    <p class="font-weight-bold tfon">Bisa Nonton Video Original Series</p>
+                                    <h2 class="font-weight-bold tfon">XL Home Power Wifi</h2>
+                                    <p class="font-weight-bold tfon">Koneksi makin luas <br> Internetan di rumah makin puas</p>
                                     <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
                                 </div>
                             </div>
@@ -58,7 +59,119 @@ $content = query("SELECT * FROM content");
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col">
-                            <img class="d-block w-100" height="350" src="<?= base_url(); ?>assets/img/banner/izi-desktop.png" alt="slide">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-ConvergenceDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Khusus Pelanggan XL Home</h2>
+                                    <p class="font-weight-bold tfon">Bisa Dapat Bonus Kuota Dengan Bayar Tagihan Tepat Waktu</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-web-BlibliDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Bayar Tagihan XL Home di Blibli.com</h2>
+                                    <p class="font-weight-bold tfon">Cashback Hingga 30 Ribu</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-web-Enola-HolmesDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Saksikan Di Neflix dengan XL HOME!</h2>
+                                    <p class="font-weight-bold tfon">*Langganan Streaming Netflix Diperlukan</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-web-The-School-Nurse-FilesDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Saksikan di Netflix dengan XL HOME!</h2>
+                                    <p class="font-weight-bold tfon">*Langganan Streaming Netflix Diperlukan</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Desktop-ST-vidio.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Film legendaris yang kini bersiries</h2>
+                                    <p class="font-weight-bold tfon">bisa ditonton di Vidio dengan XL HOME</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-web-BALIDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Kini XL HOME Hadir Di Bali</h2>
+                                    <p class="font-weight-bold tfon">Jangkauan Internet RUmah Super Cepat Makin Luas</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-BUCINDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">HORAS! XL HOME KINI HADIR DI MEDAN</h2>
+                                    <p class="font-weight-bold tfon">Bisa Internetan di Rumah Super Cepat Tanpa Batas</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/izi-desktop.png" alt="slide">
                         </div>
                         <div class="col col-6 d-none d-md-block">
                             <div class="row h-100 justify-content-center align-items-center">
@@ -74,13 +187,77 @@ $content = query("SELECT * FROM content");
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col">
-                            <img class="d-block w-100" height="350" src="<?= base_url(); ?>assets/img/banner/Image-banner-webDesktop.png" alt="slide">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-web-MGMDesktop.png" alt="slide">
                         </div>
                         <div class="col col-6 d-none d-md-block">
                             <div class="row h-100 justify-content-center align-items-center">
                                 <div class="col">
-                                    <h2 class="font-weight-bold tfon">Promo Terbaru</h2>
-                                    <h1 class="font-weight-bold tfon">Super Booster !</h1>
+                                    <h2 class="font-weight-bold tfon">Ikuti Program Member Get Member Dapatkan Gratisan Setiap Bulan</h2>
+                                    <p class="font-weight-bold tfon"></p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Cara-bayar-Desktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon"></h2>
+                                    <p class="font-weight-bold tfon">ikuti langkah mudah berikut untuk ID pelanggan dan cara bayar tagihan XL HOME</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-webDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Promo Terbaru <br> Super Booster !</h2>
+                                    <p class="font-weight-bold tfon">Tambah Kecepatan Internet di Rumah Sesuai Kebutuhan Anda.</p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Image-banner-web-Hospital-PlaylistDesktop.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Saksikan di Netflix dengan XL HOME!</h2>
+                                    <p class="font-weight-bold tfon"></p>
+                                    <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img class="d-block w-100" height="500" src="<?= base_url(); ?>assets/img/banner/Banner-iklan.png" alt="slide">
+                        </div>
+                        <div class="col col-6 d-none d-md-block">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col">
+                                    <h2 class="font-weight-bold tfon">Hiburan Tanpa Batas</h2>
+                                    <p class="font-weight-bold tfon">Bisa Nonton Video Original Series</p>
                                     <a href="<?= base_url(); ?>register" class="btn btn-primary">Daftar Sekarang</a>
                                 </div>
                             </div>
