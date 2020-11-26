@@ -68,13 +68,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://api.whatsapp.com/send?phone=<?= $data['wa'] ?>" target="_BLANK" class="text-decoration-none text-muted">
+                                    <a href="https://api.whatsapp.com/send?phone=+62<?= $data['wa'] ?>" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/wa-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
                                             <div class="p-2 my-auto">
                                                 <div class="flex-column">
                                                     <!-- <div class="p-2 my-auto">Agen 1 </div> -->
-                                                    <div class="p-2 my-auto"><i class="fa fa-whatsapp"></i><?= $data['wa'] ?></div>
+                                                    <div class="p-2 my-auto"><i class="fa fa-whatsapp"></i>0<?= $data['wa'] ?></div>
                                                 </div>
                                             </div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>
@@ -84,13 +84,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="tel:<?= $data['tlp'] ?>" target="_BLANK" class="text-decoration-none text-muted">
+                                    <a href="tel:+62<?= $data['tlp'] ?>" target="_BLANK" class="text-decoration-none text-muted">
                                         <div class="row">
                                             <div class="p-2 my-auto"><img src="<?= $base_url; ?>assets/img/telpon-icon.png" alt="" style="height: 50px; weight: 50px;"></div>
                                             <div class="p-2 my-auto">
                                                 <div class="flex-column">
                                                     <!-- <div class="p-2 my-auto">Agen 1 </div> -->
-                                                    <div class="p-2 my-auto"><i class="fa fa-phone-square"></i><?= $data['tlp'] ?></div>
+                                                    <div class="p-2 my-auto"><i class="fa fa-phone-square"></i>0<?= $data['tlp'] ?></div>
                                                 </div>
                                             </div>
                                             <div class="ml-auto p-2 my-auto"><i class="fa fa-chevron-right"></i></div>

@@ -86,6 +86,8 @@ $reg = query("SELECT *, registrasi.id AS regid, content.id AS conid FROM registr
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('#regis_detail').on('show.bs.modal', function(e) {

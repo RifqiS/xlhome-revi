@@ -16,9 +16,9 @@ $c_a_f = query("SELECT * FROM admin")[0];
                     </div>
                     <div class="m-4">
                         <ul class="list-unstyled">
-                            <li><a class="text-decoration-none text-white" href="https://api.whatsapp.com/send?phone=<?= $data['wa'] ?>"> <i class="fa fa-whatsapp"></i> <?= $c_a_f['wa']; ?></a></li>
+                            <li><a class="text-decoration-none text-white" href="https://api.whatsapp.com/send?phone=+62<?= $data['wa'] ?>"> <i class="fa fa-whatsapp"></i> 0<?= $c_a_f['wa']; ?></a></li>
                             <br>
-                            <li><a class="text-decoration-none text-white" href="tel:<?= $c_a_f['tlp']; ?>"> <i class="fa fa-phone-square"></i> <?= $c_a_f['tlp']; ?></a></li>
+                            <li><a class="text-decoration-none text-white" href="tel:+62<?= $c_a_f['tlp']; ?>"> <i class="fa fa-phone-square"></i> 0<?= $c_a_f['tlp']; ?></a></li>
                         </ul>
                     </div>
                     <div class="m-4">

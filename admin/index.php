@@ -22,7 +22,7 @@ if ($_SESSION['inapp'] == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL Home Bandung</title>
     <!-- Bikin Icon di Tab -->
-    <link rel="shortcut icon" href="<?= $base_url; ?>assets/img/app/<?= $data['logo']; ?>">
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/app/<?= $data['logo']; ?>">
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-webfont.ttf">
@@ -31,7 +31,8 @@ if ($_SESSION['inapp'] == 0) {
     <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
     <!-- END ICON -->
     <!-- JS -->
-    <script src="../assets/jQuery/jquery-3.3.1.min.js"></script>
+    <!-- <script src="assets/jQuery/jquery-3.3.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <!-- END JS -->
     <!-- DataTables CSS -->
