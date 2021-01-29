@@ -12,8 +12,8 @@ if (!$db) {
 
 function base_url()
 {
-    return 'http://localhost/xlhome-revi/';
-    // return 'http://localhost/2020/projek/xlhome-revi/';
+    // return 'http://localhost/xlhome-revi/';
+    return 'http://localhost/2020/projek/xlhome-revi/';
 }
 
 function query($query)
@@ -35,21 +35,23 @@ $_SESSION['logo'] = $c_d['logo'];
 
 // Funtion CRUD
 
-function login($ilog){
-$user = htmlspecialchars($ilog['username']);
-$pass = htmlspecialchars($ilog['password']);
-$cek = query("SELECT * FROM admin WHERE id = 'Un!X1d@4pp'")[0];
-if($cek['user'] === $user && $cek['pass'] === $pass){
-   $_SESSION['inapp'] = 1;
-   return true;
-}
+function login($ilog)
+{
+    $user = htmlspecialchars($ilog['username']);
+    $pass = htmlspecialchars($ilog['password']);
+    $cek = query("SELECT * FROM admin WHERE id = 'Un!X1d@4pp'")[0];
+    if ($cek['user'] === $user && $cek['pass'] === $pass) {
+        $_SESSION['inapp'] = 1;
+        return true;
+    }
     return false;
 }
 
-function logout(){
+function logout()
+{
     $_SESSION['inapp'] = 0;
     session_destroy();
-   return true;
+    return true;
 }
 
 function upload($foto, $tem)
@@ -254,7 +256,7 @@ function eAdmin($eAdmin)
             return false;
         }
     }
-    
+
     $query = "UPDATE admin SET user = '$user',pass = '$pass',TitleHome = '$TitleHome',logo = '$logo_baru',sos1 = '$sos1',sos2 = '$sos2',tlp = '$tlp',wa = '$wa',alamat = '$alamat' WHERE id = 'Un!X1d@4pp'";
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
