@@ -1,13 +1,13 @@
 <?php
 session_start();
-// $server = "localhost";
-// $user = "root";
-// $password = "";
-// $nama_database = "profider_db";
-$server = "sql313.epizy.com";
-$user = "epiz_27135003";
-$password = "Rifqi240403";
-$nama_database = "epiz_27135003_profider_db";
+$server = "localhost";
+$user = "root";
+$password = "";
+$nama_database = "profider_db";
+// $server = "sql313.epizy.com";
+// $user = "epiz_27135003";
+// $password = "Rifqi240403";
+// $nama_database = "epiz_27135003_profider_db";
 $db = mysqli_connect($server, $user, $password, $nama_database);
 if (!$db) {
     die("Error" . mysqli_connect_error());
@@ -15,9 +15,9 @@ if (!$db) {
 
 function base_url()
 {
-    return 'http://beta-xlhomebandung.great-site.net/';
+    // return 'http://beta-xlhomebandung.great-site.net/';
     //return 'http://localhost/xlhome-revi/';
-    // return 'http://localhost/2020/projek/xlhome-revi/';
+    return 'http://localhost/2020/projek/xlhome-revi/';
 }
 
 function query($query)
