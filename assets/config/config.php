@@ -1,21 +1,10 @@
 <?php
 session_start();
-<<<<<<< HEAD
-// $server = "localhost";
-// $user = "root";
-// $password = "";
-// $nama_database = "profider_db";
-$server = "sql313.epizy.com";
-$user = "epiz_27135003";
-$password = "Rifqi240403";
-$nama_database = "epiz_27135003_profider_db";
-=======
 
 $server = "localhost";
 $user = "u527180186_profider_db";
 $password = "XLHomeBandung@4dmin.com";
 $nama_database = "u527180186_profider_db";
->>>>>>> 082a0b49a171e64a15f4c2907f8a6151d033e330
 $db = mysqli_connect($server, $user, $password, $nama_database);
 if (!$db) {
     die("Error" . mysqli_connect_error());
@@ -23,7 +12,7 @@ if (!$db) {
 
 function base_url()
 {
-    return 'http://xlhomewifibandung.com/';
+    return 'https://xlhomewifibandung.com/';
     //return 'http://localhost/xlhome-revi/';
     // return 'http://localhost/2020/projek/xlhome-revi/';
 }
